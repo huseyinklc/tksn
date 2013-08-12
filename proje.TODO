@@ -3,7 +3,8 @@ Yapılacaklar
  ☐ Depo için oluşturulacak linkler, ve bu sayfaların control ve view kısımları oluşturulacak
  ☐ Bitmiş ürün adeti girme
  ✔ Gelen Malzeme gir @done (13-08-12 10:03)
-     ☐ Database tanımlamaları yapıldıktan sonra, beklenen ürünler echo edilecek ve eğer bu ürünler içinde yoksa 
+       ☐ Database tanımlamaları yapıldıktan sonra, beklenen ürünler echo edilecek ve eğer bu ürünler içinde yoksa 
        gelen malzemenin ismi ve kodu girilecek, bu malzemede arge beklenen malzemelerde uyarı resmi ve background kırmızı olacak şekilde beklenmeyen bu eleman geldi şeklinde uyarı verecek!
+       ☐ Javascript ve css kısmı halledildikten sonra  
  ☐ Argeye malzeme çıkışı
  ☐ Sipariş Girişi

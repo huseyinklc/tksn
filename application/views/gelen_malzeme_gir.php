@@ -1,11 +1,12 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Başlık bu</title>
+		<title>Malzeme Girişi</title>
 	</head>
 	
 	<body>
 		<h1>Malzeme Girişi</h1>
+		<?php echo $hata; ?>
 
 		<?php $this->load->helper('form'); ?>
 

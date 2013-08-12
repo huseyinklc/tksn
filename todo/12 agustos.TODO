@@ -1,0 +1,21 @@
+Yapılacaklar
+ ✔ Önceki yapılanlar ile github senkronizasyonu sağlanacak! @done (13-08-12 09:41)
+ ☐ Depo için oluşturulacak linkler, ve bu sayfaların control ve view kısımları oluşturulacak
+
+ @Later:
+  ☐ Bitmiş ürün adeti girme
+      Her proje ismi açılır menü ile seçilebilecek ve listeden seçilip adet eklenecek..
+ ✔ Gelen Malzeme gir @done (13-08-12 10:03)
+       ✔ Hatalar ile form tekrar bastırılacak.. @done (13-08-12 11:15)
+       @Later:
+       ☐ Hatalar için config dosyaları türkçe yapılacak..
+       ☐ Database tanımlamaları yapıldıktan sonra, beklenen ürünler echo edilecek ve eğer bu ürünler içinde yoksa 
+       gelen malzemenin ismi ve kodu girilecek, bu malzemede arge beklenen malzemelerde uyarı resmi ve background kırmızı olacak şekilde beklenmeyen bu eleman geldi şeklinde uyarı verecek!
+       ☐ Javascript ve css kısmı halledildikten sonra gelen_malzeme_gir_basarili
+         sayfası için her kelimenin yanında kalem işareti konulacak ve ajax ile
+         değişiklik yapmak istenilende değişiklik yapılabilecek..  
+ @Later: 
+ ☐ Argeye malzeme çıkışı
+     Deponun elindeki malzemeler echo edilecek ve bunlara tıklanarak malzeme çıkışı yapılacak
+ ☐ Sipariş Girişi
+   
