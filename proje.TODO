@@ -1,3 +1,9 @@
 Yapılacaklar
- ☐ Önceki yapılanlar ile github senkronizasyonu sağlanacak!
- ☐ Geliştirmeye kaldığı yerden devam edilecek
+ ✔ Önceki yapılanlar ile github senkronizasyonu sağlanacak! @done (13-08-12 09:41)
+ ☐ Depo için oluşturulacak linkler, ve bu sayfaların control ve view kısımları oluşturulacak
+ ☐ Bitmiş ürün adeti girme
+ ✔ Gelen Malzeme gir @done (13-08-12 10:03)
+     ☐ Database tanımlamaları yapıldıktan sonra, beklenen ürünler echo edilecek ve eğer bu ürünler içinde yoksa 
+       gelen malzemenin ismi ve kodu girilecek, bu malzemede arge beklenen malzemelerde uyarı resmi ve background kırmızı olacak şekilde beklenmeyen bu eleman geldi şeklinde uyarı verecek!
+ ☐ Argeye malzeme çıkışı
+ ☐ Sipariş Girişi
