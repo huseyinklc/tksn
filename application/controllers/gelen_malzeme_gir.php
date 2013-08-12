@@ -6,6 +6,7 @@
 	{
 		public function index()
 		{
+			// Sayfa ilk yüklendiği zaman boş hata değeri yüklüyoruz, çünkü hata değişkeni bulunamadı hatası vermemesi için
 			$veri['hata'] = '';
 
 			$this->load->view('gelen_malzeme_gir', $veri);
