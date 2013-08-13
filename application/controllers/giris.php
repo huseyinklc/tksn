@@ -49,7 +49,7 @@ class giris extends CI_Controller
 
 			// Doğrulanmış veriler post metodu ile veri array'i ile
 			// girisDatabaseKontrolu fonksiyonuna yollandı..
-		 	$this->giris_model->girisDatabaseKontrolu($veri);
+		 	$this->giris_model->giris_database_kontrolu($veri);
 		}
 	}
 
