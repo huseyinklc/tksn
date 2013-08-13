@@ -34,6 +34,7 @@
 	<p>&nbsp;</p>
 	<p>&nbsp;</p>
 	<p>&nbsp;</p>
+	<P><?php echo $form_hatasi; ?></p>
 	<p>
 		<label>Kullanıcı Adı:
 			<?php 

@@ -2,6 +2,12 @@
 echo 	'<meta charset="utf-8">';
 class giris extends CI_Controller
 {
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('giris_model');
+	}
 	/** Giriş sayfası 
 	 * 
 	 * Codeigniter'ın ilk sayfası olarak giriş sayfası açılır ve
@@ -11,9 +17,9 @@ class giris extends CI_Controller
 	 */
 	public function index()
 	{
+		$veri['form_hatasi'] = '';
 
-		$this->load->view('giris');
-
+		$this->load->view('giris',$veri);
 	}
 
 	/** Giriş sayfasındaki form değerlerini kontrol edilmesi
@@ -31,7 +37,10 @@ class giris extends CI_Controller
 
 		// Form değerleri kontrol ediliyor
 		if($this->form_validation->run() == FALSE){
-			echo validation_errors();
+
+			$veri['form_hatasi'] =  validation_errors();
+			$this->load->view('giris', $veri);
+
 		} else {
 
 			// Post metodu ile kullanıcı adı ve şifre çekildi..
@@ -40,60 +49,10 @@ class giris extends CI_Controller
 
 			// Doğrulanmış veriler post metodu ile veri array'i ile
 			// girisDatabaseKontrolu fonksiyonuna yollandı..
-		 	$this->girisDatabaseKontrolu($veri);
+		 	$this->giris_model->girisDatabaseKontrolu($veri);
 		}
 	}
 
-	/** Form ile girilen değerlerin database'de olup olmadığını kontrol ediyoruz..
-	 * 
-	 * 
-	 * 
-	 * iki kere database seçmemizin amacı count_all_result metodunu çağırdığımız zaman
-	 * sonuç döndürdüğü için database sorgumuzu sıfırlıyorlar ve ikinci sorguda sanki 
-	 * select * yapılmış gibi sonuç veriyor..
-	 * Bunu iki kez yapmak ile DRY kuralını ihlal etmiş bulunuyoruz. 
-	 * Bu database bağlantıları fonsiyona aktarılarak DRY kuralı ihlal edilmemeli !
-	 * 
-	 * 
-	 * @param  array $veri kullanıcı_adı ve sifre key'lerine sahip
-	 * @return [type]       [description]
-	 */
-	public function girisDatabaseKontrolu($veri)
-	{
-		// kullaanıcı adı ve user_id değerlerini session'da tutmak için session kütüphanesini yüklüyoruz
-		// daha sonra bunları ayrı bir fonksiyona atıp, refactoring yapmak gerekiyor, ya da autoload kullanmak gerek..
-		$this->load->library('session');
-
-		// Girilen kullanıcı adı ve veritabanındaki kullanıcı adı 
-		// ve şifrenin uyuşup uyuşmadığı kontrol ediliyor
-		$this->db->select("kullanici_adi, sifre")->
-		where("kullanici_adi = '" . $veri['kullanici_adi'] . "' AND sifre = '" . $veri['sifre'] . "'" );
-	
-		// Eğer girdiğimiz sorgunun sonuçları 1 ise kullanıcı adı ve şifre tutuyor demektir..
-		if($this->db->count_all_results('kullanicilar') == 1){
-			// Tekrar aynı sorguyu soruyoruz, çünkü count_all_results sıfırlıyor..
-			$this->db->select("kullanici_adi, user_id")->
-			where("kullanici_adi = '" . $veri['kullanici_adi'] . "' AND sifre = '" . $veri['sifre'] . "'" );
-			
-			// sorguyu row array'ine çektik...
-			$query = $this->db->get('kullanicilar');
-			$row = $query->result();
-
-			// Kullanıcı adı ve şifreyi array'e atıyoruz
-			 $session['user_id'] =   $row[0]->user_id;
-			 $session['kullanici_adi'] = $row[0]->kullanici_adi;
-
-			 //array'e attığımız dosyaları sessionda kullanıyoruz..
-			 $this->session->set_userdata($session);
-			
-			// Session değerine göre ana sayfaya yönlendiriyoruz..
-			$this->anaSayfayaYonlendir();	 	
-			
-		} else {
-			echo 'Kullanıcı Adı ve ya şifre Yanlış';
-		}
-	}
-	
 
 	public function anaSayfayaYonlendir()
 	{
@@ -116,7 +75,6 @@ class giris extends CI_Controller
 				break;
 		} 
 	}
-
 	
 	/** Çıkış
 	 *
