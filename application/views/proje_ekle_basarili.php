@@ -14,7 +14,7 @@
 		<p>
 		<?php echo '<strong>Eklenen proje resmi: </strong>';
 		
-		 echo "<img src='../../uploads/" .  $upload_bilgileri['upload_data']['orig_name'] . "' />";
+		 echo "<img src='../../asset/image/proje_resimleri/" .  $upload_bilgileri['upload_data']['orig_name'] . "' />";
 		 ?>
 		</p>
 		<p>

@@ -25,7 +25,7 @@
 			$veri['proje_ismi'] = $this->input->post('proje_ismi');
 			$veri['kisa_proje_tanimi'] = $this->input->post('kisa_proje_tanimi');
 			
-			$dosya_ayari['upload_path'] = './uploads/';
+			$dosya_ayari['upload_path'] = './asset/image/proje_resimleri/';
 			$dosya_ayari['allowed_types'] = 'gif|jpg|png|jpeg';
 			$dosya_ayari['max_size']	= '2048';
 			$dosya_ayari['max_width']  = '1024';
