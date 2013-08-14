@@ -1,7 +1,15 @@
  ✔ Basit bir controller fonksiyonu ile modelden user_id çekilip @done (13-08-14 09:44)
    buna göre kullanıcı sayfasına yönlendirilecek
  ✔ Proje ekle sayfasındaki dosya upload sorunu çözülecek @done (13-08-14 14:12)
- ☐ Proje ekle sayfasına text eklemede olacak
+ ✔ Proje ekle sayfasına text eklemede olacak @done (13-08-14 14:17)
      @Later:
      ☐ jquery ile hepsi kontrol edilip öyle submit edilecek
+ ✔ Eklenen Proje Tanımı Database'e eklenecek @done (13-08-14 14:38)
+   ☐ Eklendikten Sonra Başarılı sayfası ve neler eklendiği gösterilmeli.
+         ☐ Upload hatalarıda form hataları gibi gösterilmeli
+   ☐ Proje ekleden çekilen değerler, database'e yazılacak
+        ☐ 
+   ☐ Databasede olan projeler ekrana bastırılacak 
+   ☐  Sessionlara database'den kullanıcı_turu çekilecek ve kullanıcı türüne ait olmayan sayfaya erişilemeyecek!
+   ☐ Proje şema sayfası yapılcak..
   

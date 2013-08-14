@@ -22,7 +22,8 @@
 
 			
 			$this->form_validation->set_rules('proje_ismi', 'Proje ismi', 'required|max_length[15]|min_length[4]|alpha_numeric|xss_clean');
-			$proje_ismi = $this->input->post('proje_ismi');
+			$veri['proje_ismi'] = $this->input->post('proje_ismi');
+			$veri['kisa_proje_tanimi'] = $this->input->post('kisa_proje_tanimi');
 			
 			$dosya_ayari['upload_path'] = './uploads/';
 			$dosya_ayari['allowed_types'] = 'gif|jpg|png|jpeg';
@@ -37,15 +38,16 @@
 
 				$error = array('error' => $this->upload->display_errors());
 				$veri['hata'] = validation_errors();
+
 				$this->load->view('proje_ekle', $veri);
 
 				
 			}
 			else
 			{
-				$data = array('upload_data' => $this->upload->data());
-				echo $proje_ismi;
-				print_r($data);
+				$veri['upload_bilgileri'] = array('upload_data' => $this->upload->data());
+				$this->load->view('proje_ekle_basarili', $veri);
+				
 			}
 
 		}
