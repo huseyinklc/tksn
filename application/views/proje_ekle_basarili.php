@@ -7,16 +7,14 @@
 	<body>
 		<h1>Proje Başarılı Bir Şekilde Eklendi!!!</h1>
 		
-		<img src="images.jpeg" />
+		
 		<p>
-		<?php echo '<strong>projenin ismi: </strong>' . $proje_ismi; ?>
+		<?php echo '<strong>Eklenen projenin ismi: </strong>' . $proje_ismi; ?>
 		</p>
 		<p>
-		<?php echo 'proje resmi: ';
-		print_r($upload_bilgileri);
-		 echo '<img src="/opt/lampp/htdocs/tksn/uploads/images.jpeg" />';
-		 // echo $upload_bilgileri['upload_data']['orig_name'];
-		 echo getcwd();
+		<?php echo '<strong>Eklenen proje resmi: </strong>';
+		
+		 echo "<img src='../../uploads/" .  $upload_bilgileri['upload_data']['orig_name'] . "' />";
 		 ?>
 		</p>
 		<p>

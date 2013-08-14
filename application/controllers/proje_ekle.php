@@ -39,9 +39,7 @@
 				$error = array('error' => $this->upload->display_errors());
 				$veri['hata'] = validation_errors();
 
-				$this->load->view('proje_ekle', $veri);
-
-				
+				$this->load->view('proje_ekle', $veri);			
 			}
 			else
 			{
