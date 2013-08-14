@@ -12,9 +12,13 @@
 	 */
 	class Giris_Model extends CI_Model
 	{
-		public function giris_Database_Kontrolu($veri)
+		public function giris_database_kontrolu($veri)
 	{	
-			
+		if($this->kullanici_bilgileri_databaseden_cekme($veri)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 

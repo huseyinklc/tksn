@@ -47,20 +47,43 @@ class giris extends CI_Controller
 			$veri['kullanici_adi'] = $this->input->post('kadi');
 			$veri['sifre'] = $this->input->post('sifre');
 
-			// Doğrulanmış veriler post metodu ile veri array'i ile
-			// girisDatabaseKontrolu fonksiyonuna yollandı..
-		 	$this->giris_model->giris_database_kontrolu($veri);
+			// ilk fonksiyon kullanıcı adı ve şifreye ait kullanıcı olup olmadığını kontrol etti
+
+			if($this->giris_model->giris_database_kontrolu($veri)) {
+
+				// Eğer kullanıcı bulunduysa kullanıcı bilgileri array içine aktarıldı
+				$kullanici_bilgileri =	$this->giris_model->kullanici_bilgileri_databaseden_cekme($veri);
+
+			} else {
+				
+				// Bulunamıyan kullanıcı bilgileri boş string haline getirildi..
+				$kullanici_bigileri = '';
+
+			}
+	 		
+	 		// uyelik turu fonksiyon yardimi ile çekildi..
+		 	$uyelik_turu = $this->uyelik_turu($kullanici_bilgileri);		 	
+
+		 	// uyelik turune göre anasayfaya yonlendirdi
+		 	$this->anaSayfayaYonlendir($uyelik_turu); 	
 		}
 	}
 
-
-	public function anaSayfayaYonlendir()
+	
+	public function uyelik_turu($kullanici_bilgileri)
 	{
-		$gecici_array = $this->session->all_userdata();
-		$user_id = $gecici_array['user_id'];
+		
+		if($kullanici_bilgileri) {	
+			return $kullanici_bilgileri[0]->uyelik_turu;
+		} else {
+			return false;
+		}
+	}
 
-		print_r($gecici_array);
-		switch ($user_id) {
+	public function anaSayfayaYonlendir($uyelik_turu)
+	{
+		
+		switch ($uyelik_turu) {
 			case 1:
 				$this->load->view('root_index');
 				break;
@@ -72,7 +95,7 @@ class giris extends CI_Controller
 				break;
 			default:
 				// burası için hata sayfası yapılacak...
-				break;
+				echo 'kullanici tipini göre sayfa bulunamadı';
 		} 
 	}
 	
