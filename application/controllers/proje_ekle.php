@@ -7,6 +7,7 @@
 			parent::__construct();
 			$this->load->helper('form');
 			$this->load->library('form_validation');
+			$this->load->model('proje_ekle_m');
 		}
 
 		public function index()
@@ -21,7 +22,9 @@
 
 
 			
-			$this->form_validation->set_rules('proje_ismi', 'Proje ismi', 'required|max_length[15]|min_length[4]|alpha_numeric|xss_clean');
+			$this->form_validation->set_rules('proje_ismi', 'Proje ismi', 'required|max_length[15]|min_length[4]|xss_clean');
+			$this->form_validation->set_rules('kisa_proje_tanımı', 'Proje Tanımı', 'required|max_length[15]|min_length[4]|xss_clean');
+
 			$veri['proje_ismi'] = $this->input->post('proje_ismi');
 			$veri['kisa_proje_tanimi'] = $this->input->post('kisa_proje_tanimi');
 			
@@ -43,7 +46,10 @@
 			}
 			else
 			{
-				$veri['upload_bilgileri'] = array('upload_data' => $this->upload->data());
+				
+				$veri['upload_bilgileri'] = $this->upload->data();
+				$veri['upload_edilen_resmin_ismi'] = $veri['upload_bilgileri']['orig_name'];
+				$this->proje_ekle_model->proje_ekledeki_bilgileri_database_aktarma($veri);
 				$this->load->view('proje_ekle_basarili', $veri);
 				
 			}
