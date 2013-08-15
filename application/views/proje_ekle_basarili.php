@@ -14,11 +14,11 @@
 		<p>
 		<?php echo '<strong>Eklenen proje resmi: </strong>';
 		
-		 echo "<img src='../../asset/image/proje_resimleri/" .  $upload_bilgileri['orig_name'] . "' />";
+		 echo "<img src='../../asset/image/proje_resimleri/" .  $upload_bilgileri['file_name'] . "' />";
 		 ?>
 		</p>
 		<p>
-		<?php echo $kisa_proje_tanimi; ?>
+		<?php echo '<strong>Proje Tanımı: </strong>' . $proje_tanimi; ?>
 		</p>
 		
 	</body>

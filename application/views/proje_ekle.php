@@ -28,8 +28,8 @@
 </p>
 <p>
 <?php 
-	$kisa_proje_tanimi = array('name'=>'kisa_proje_tanimi', 'id'=>'kisa_proje_tanimi', 'cols'=>'100', 'rows'=>30);
-	echo form_textarea($kisa_proje_tanimi);
+	$proje_tanimi = array('name'=>'proje_tanimi', 'id'=>'proje_tanimi', 'cols'=>'100', 'rows'=>30);
+	echo form_textarea($proje_tanimi); 
 ?>
 </p>
 <br /><br />
