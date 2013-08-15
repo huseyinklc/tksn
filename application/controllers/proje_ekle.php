@@ -23,7 +23,7 @@
 
 			
 			$this->form_validation->set_rules('proje_ismi', 'Proje ismi', 'required|max_length[15]|min_length[4]|xss_clean');
-			$this->form_validation->set_rules('kisa_proje_tanımı', 'Proje Tanımı', 'required|max_length[15]|min_length[4]|xss_clean');
+			$this->form_validation->set_rules('kisa_proje_tanimi', 'Proje Tanımı', 'required|max_length[50000]|min_length[4]|xss_clean');
 
 			$veri['proje_ismi'] = $this->input->post('proje_ismi');
 			$veri['kisa_proje_tanimi'] = $this->input->post('kisa_proje_tanimi');

@@ -5,10 +5,10 @@
      @Later:
      ☐ jquery ile hepsi kontrol edilip öyle submit edilecek
  ✔ Eklenen Proje Tanımı Database'e eklenecek @done (13-08-14 14:38)
-   ☐ Eklendikten Sonra Başarılı sayfası ve neler eklendiği gösterilmeli.
+   ✔ Eklendikten Sonra Başarılı sayfası ve neler eklendiği gösterilmeli. @done (13-08-15 08:34)
          ☐ Upload hatalarıda form hataları gibi gösterilmeli
    ☐ Proje ekleden çekilen değerler, database'e yazılacak
-        ☐ 
+    
    ☐ Databasede olan projeler ekrana bastırılacak 
    ☐  Sessionlara database'den kullanıcı_turu çekilecek ve kullanıcı türüne ait olmayan sayfaya erişilemeyecek!
    ☐ Proje şema sayfası yapılcak..
