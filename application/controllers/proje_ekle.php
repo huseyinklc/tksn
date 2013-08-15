@@ -13,6 +13,7 @@
 		public function index()
 		{
 			$veri['hata'] = '';
+			$veri['upload_hatasi'] = '';
 			$this->load->view('proje_ekle', $veri);
 		
 		}
@@ -39,8 +40,8 @@
 			if ( !$this->upload->do_upload() || ($this->form_validation->run() == FALSE) )
 			{
 
-				$error = array('error' => $this->upload->display_errors());
 				$veri['hata'] = validation_errors();
+				$veri['upload_hatasi'] = $this->upload->display_errors();
 
 				$this->load->view('proje_ekle', $veri);			
 			}
@@ -49,8 +50,14 @@
 				
 				$veri['upload_bilgileri'] = $this->upload->data();
 				$veri['upload_edilen_resmin_ismi'] = $veri['upload_bilgileri']['orig_name'];
-				$this->proje_ekle_model->proje_ekledeki_bilgileri_database_aktarma($veri);
-				$this->load->view('proje_ekle_basarili', $veri);
+				if($this->proje_ekle_model->proje_ekledeki_bilgileri_database_aktarma($veri)) {
+						$this->load->view('proje_ekle_basarili', $veri);
+				} else {
+					// Buraya internal server error sayfası gelecek!!!
+					echo 'internal server error';
+				}
+				
+			
 				
 			}
 

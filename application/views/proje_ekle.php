@@ -6,7 +6,11 @@
 <body>
 <p>Lütfen Eklemek istediğiniz proje resmini seçiniz</p>
 
-<?php echo $hata; ?>
+<?php 
+	echo $hata . '<br />'; 
+	echo $upload_hatasi . '<br />';
+?>
+
 
 <?php echo form_open_multipart('proje_ekle/form_upload');?>
 <p>

@@ -15,7 +15,9 @@
 
 
 			$database_eklenecek_veriler = array('proje_ismi'=>"$proje_ismi",'proje_resmi'=>"$proje_resmi", 'proje_tanimi'=>"$proje_tanimi");
-			$this->db->insert('proje', $database_eklenecek_veriler);
+			if ($this->db->insert('proje', $database_eklenecek_veriler)) {
+				return true;
+			}
 
 		}
 
