@@ -7,7 +7,7 @@
 			parent::__construct();
 			$this->load->helper('form');
 			$this->load->library('form_validation');
-			$this->load->model('proje_ekle_m');
+			$this->load->model('proje_ekle_model');
 		}
 
 		public function index()
