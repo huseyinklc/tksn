@@ -9,7 +9,7 @@
 			// Sayfa ilk yüklendiği zaman boş hata değeri yüklüyoruz, çünkü hata değişkeni bulunamadı hatası vermemesi için
 			$veri['hata'] = '';
 
-			$this->load->view('gelen_malzeme_gir', $veri);
+			$this->load->view('arge/gelen_malzeme_gir/gelen_malzeme_gir', $veri);
 		}
 
 		/**
@@ -29,7 +29,7 @@
 			if($this->form_validation->run() == FALSE)
 			{
 				$veri['hata'] = validation_errors();
-				$this->load->view('gelen_malzeme_gir', $veri);
+				$this->load->view('arge/gelen_malzeme_gir/gelen_malzeme_gir', $veri);
 			} else { // Eğer bir hata yoksa
 
 				// formdan gelen bilgileri veri arrayine atıp bunları gelen_malzeme_gir_basarili sayfasında ekrana bastırıyoruz..
@@ -37,7 +37,7 @@
 				$veri['urun_ismi'] = $this->input->post('urun_ismi');
 				$veri['urun_kodu'] = $this->input->post('urun_kodu');
 
-				$this->load->view('gelen_malzeme_gir_basarili', $veri);
+				$this->load->view('arge/gelen_malzeme_gir/gelen_malzeme_gir_basarili', $veri);
 
 
 			}		

@@ -87,17 +87,17 @@ class giris extends CI_Controller
 			case 0:
 				$uyelik_turu_sesion = array('uyelik_turu'=>'0');
 				$this->session->set_userdata($uyelik_turu_sesion);
-				$this->load->view('root_index');
+				$this->load->view('root/root_index');
 				break;
 			case 1: 
 				$uyelik_turu_sesion = array('uyelik_turu'=>'1');
 				$this->session->set_userdata($uyelik_turu_sesion);
-				$this->load->view('arge_index');
+				$this->load->view('arge/arge_index');
 				break;
 			case 2:
 				$uyelik_turu_sesion = array('uyelik_turu'=>'2');
 				$this->session->set_userdata($uyelik_turu_sesion);
-				$this->load->view('depo_index');
+				$this->load->view('depo/depo_index');
 				break;
 			default:
 				// burası için hata sayfası yapılacak...
@@ -117,6 +117,6 @@ class giris extends CI_Controller
 	public function cikis()
 	{
 		$this->session->sess_destroy();
-		$this->load->view('giris');
+		$this->load->view('../giris');
 	}
 } 

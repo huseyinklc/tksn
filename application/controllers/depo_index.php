@@ -9,6 +9,6 @@
 
 		public function index()
 		{
-			$this->load->view('depo_index');
+			$this->load->view('depo/depo_index');
 		}
 	}

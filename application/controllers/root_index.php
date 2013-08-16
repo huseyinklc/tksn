@@ -9,6 +9,6 @@
 
 		public function index()
 		{
-			$this->load->view('root_index');
+			$this->load->view('root/root_index');
 		}
 	}
