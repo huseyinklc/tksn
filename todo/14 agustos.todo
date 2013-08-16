@@ -6,9 +6,11 @@
      ☐ jquery ile hepsi kontrol edilip öyle submit edilecek
  ✔ Eklenen Proje Tanımı Database'e eklenecek @done (13-08-14 14:38)
    ✔ Eklendikten Sonra Başarılı sayfası ve neler eklendiği gösterilmeli. @done (13-08-15 08:34)
-         ☐ Upload hatalarıda form hataları gibi gösterilmeli
-   ☐ Proje ekleden çekilen değerler, database'e yazılacak
-    
+         ✔ Upload hatalarıda form hataları gibi gösterilmeli @done (13-08-15 09:04)
+   ✔ Proje ekleden çekilen değerler, database'e yazılacak @done (13-08-15 08:49)
+   ✔ Yazılan kodlara dökümantasyon yapılacak @done (13-08-15 16:10)
+   ✔ Resim ismi orig_name ile tutulduğunda eğer aynı resimden varsa bu durumda server resmin sonuna rakam koyuyor @done (13-08-15 16:10)
+     bu yüzden resim orig_name ile değil serverdaki ismi ile databasede tutulmalı ve ekrana bu link bastırılmalı
    ☐ Databasede olan projeler ekrana bastırılacak 
    ☐  Sessionlara database'den kullanıcı_turu çekilecek ve kullanıcı türüne ait olmayan sayfaya erişilemeyecek!
    ☐ Proje şema sayfası yapılcak..

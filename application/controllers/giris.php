@@ -65,7 +65,7 @@ class giris extends CI_Controller
 		 	$uyelik_turu = $this->uyelik_turu($kullanici_bilgileri);		 	
 
 		 	// uyelik turune göre anasayfaya yonlendirdi
-		 	$this->anaSayfayaYonlendir($uyelik_turu); 	
+		 	$this->uyelik_turune_gore_session_set_et($uyelik_turu); 	
 		}
 	}
 
@@ -80,17 +80,23 @@ class giris extends CI_Controller
 		}
 	}
 
-	public function anaSayfayaYonlendir($uyelik_turu)
+	public function uyelik_turune_gore_session_set_et($uyelik_turu)
 	{
 		
 		switch ($uyelik_turu) {
-			case 1:
+			case 0:
+				$uyelik_turu_sesion = array('uyelik_turu'=>'0');
+				$this->sesion->set_userdata($uyelik_turu_sesion);
 				$this->load->view('root_index');
 				break;
-			case 2: 
+			case 1: 
+				$uyelik_turu_sesion = array('uyelik_turu'=>'1');
+				$this->sesion->set_userdata($uyelik_turu_sesion);
 				$this->load->view('arge_index');
 				break;
-			case 3:
+			case 2:
+				$uyelik_turu_sesion = array('uyelik_turu'=>'2');
+				$this->sesion->set_userdata($uyelik_turu_sesion);
 				$this->load->view('depo_index');
 				break;
 			default:
