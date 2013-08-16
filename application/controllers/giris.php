@@ -86,17 +86,17 @@ class giris extends CI_Controller
 		switch ($uyelik_turu) {
 			case 0:
 				$uyelik_turu_sesion = array('uyelik_turu'=>'0');
-				$this->sesion->set_userdata($uyelik_turu_sesion);
+				$this->session->set_userdata($uyelik_turu_sesion);
 				$this->load->view('root_index');
 				break;
 			case 1: 
 				$uyelik_turu_sesion = array('uyelik_turu'=>'1');
-				$this->sesion->set_userdata($uyelik_turu_sesion);
+				$this->session->set_userdata($uyelik_turu_sesion);
 				$this->load->view('arge_index');
 				break;
 			case 2:
 				$uyelik_turu_sesion = array('uyelik_turu'=>'2');
-				$this->sesion->set_userdata($uyelik_turu_sesion);
+				$this->session->set_userdata($uyelik_turu_sesion);
 				$this->load->view('depo_index');
 				break;
 			default:
