@@ -11,11 +11,10 @@
 	<?php echo form_open_multipart('sema_ekle/form_kontrolu'); ?>
 
 	<p>
-	<label>Lütfen Eklemek istediğiniz şema sayısını şeçiniz: </label>
+	<label>Lütfen Eklemek istediğiniz şemayı seçiniz: </label>
 
 	<?php 
-		// $proje_sayisi = array('name'=>'proje_sayisi', 'id'=>'proje_sayisi', 'maxlength'=>'1');
-		// echo form_input($proje_sayisi);
+
 
 		
 
