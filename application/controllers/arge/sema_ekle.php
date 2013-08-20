@@ -2,20 +2,22 @@
 
 	class Sema_Ekle extends CI_Controller
 	{
+		
+		public function __construct()
+		{
+			parent::__construct();
+			 $this->load->model('./arge/sema_ekle_model');
+		}
+
 		public function index()
 		{
-			$veri['upload_sayisi'] = 1;
+
 			$veri['dosya_yukleme_hatasi'] = '';
 			$this->load->view('arge/sema_ekle/sema_ekle', $veri);
 		}
 		public function form_kontrolu()
 		{
-		
-		$config['upload_path'] = './uploads/';
-		$config['allowed_types'] = 'gif|jpeg|jpg|png';
-		$config['max_size'] = '2000';
-		$config['max_width'] = '1024';
-		$config['max_height'] = '768';
+			$ayar = $this->model->sema_upload_ozellikleri();
 
 			$this->load->library('upload', $config);	
 			$this->upload->do_upload();

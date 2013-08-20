@@ -4,7 +4,7 @@
 	{
 		public function __construct()
 		{
-			parent::__construct;
+			parent::__construct();
 		}
 
 		public function sema_upload_ozellikleri()
