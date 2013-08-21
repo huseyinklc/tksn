@@ -6,7 +6,7 @@
 			parent::__construct();
 			$this->load->helper('form');
 			$this->load->library('form_validation');
-			$this->load->model('proje_ekle_model');
+			$this->load->model('arge/proje_ekle_model');
 		}
 
 		public function index()
@@ -41,7 +41,7 @@
 				$form_hatalari['upload_hatasi'] = $this->upload->display_errors();
 
 				// Tekrar proje ekle sayfamızı hata değerleri ile yüklüyoruz
-				$this->load->view('proje_ekle/proje_ekle', $form_hatalari);			
+				$this->load->view('arge/proje_ekle/proje_ekle', $form_hatalari);			
 			}
 			else
 			{
@@ -54,7 +54,7 @@
 				if($this->proje_ekle_model->proje_ekledeki_bilgileri_database_aktarma($database_yazilacak_bilgiler)) {
 						// eğer form bilgileri database e aktarma işlemi başarılı ise, proje_ekle_başarılı sayfasını girilen bilgiler
 						// ile ekrana yazdırıyoruz 
-						$this->load->view('proje_ekle/proje_ekle_basarili', $database_yazilacak_bilgiler);
+						$this->load->view('arge/proje_ekle/proje_ekle_basarili', $database_yazilacak_bilgiler);
 				} else {
 					// Buraya internal server error sayfası gelecek!!!
 					echo 'internal server error';

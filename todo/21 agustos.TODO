@@ -1,0 +1,4 @@
+ ✔ Sema Ekle başarılıda eklenen resim gösterilecek @done (13-08-21 15:17)
+ ✔  sema_ekle_basarili sayfasında, başka şema yüklemek istiyorsanız tıklayınız yazacak @done (13-08-21 15:17)
+ ☐ eklenen şema ismi database'e yazılacak
+ ☐ şema sayfasına tıklandığında şemalar database den echo edilecek
