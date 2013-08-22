@@ -42,6 +42,12 @@
 			return $query->result();
 		}
 
+		public function proje_goster($proje_id)
+		{
+			$this->db->where('proje_id', $proje_id);
+			$query = $this->db->get('proje');
 
 
+			return $query->result();
+		}
 	}
