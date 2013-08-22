@@ -2,8 +2,6 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Başlık bu</title>
-		<?php print_r($this->session->all_userdata()); ?>
-
 	</head>
 	
 	<body>

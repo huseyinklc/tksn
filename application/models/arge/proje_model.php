@@ -1,6 +1,6 @@
 <?php
 
-	class proje_ekle_model extends CI_Model
+	class proje_model extends CI_Model
 	{
 		public function __construct()
 		{
@@ -35,7 +35,13 @@
 			return $proje_resmi_upload_ozellikleri;
 		}
 
-		public function 
+		public function proje_isimlerini_databaseden_cek()
+		{
+			$query =  $this->db->get('proje');
+
+			return $query->result();
+		}
+
 
 
 	}
