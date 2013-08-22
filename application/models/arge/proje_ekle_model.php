@@ -35,6 +35,7 @@
 			return $proje_resmi_upload_ozellikleri;
 		}
 
+		public function 
 
 
 	}
