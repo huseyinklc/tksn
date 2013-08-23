@@ -6,7 +6,7 @@
 			parent::__construct();
 			$this->load->helper('form');
 			$this->load->library('form_validation');
-			$this->load->model('arge/proje_ekle_model');
+			$this->load->model('arge/proje_model');
 		}
 
 		public function index()
@@ -28,7 +28,7 @@
 
 
 			// Modelden projeye eklenecek resmin ayar bilgileri array içinde çekildi
-			$upload_edilecek_resim_ozellikleri = $this->proje_ekle_model->proje_resmi_upload_ozellikleri();
+			$upload_edilecek_resim_ozellikleri = $this->proje_model->proje_resmi_upload_ozellikleri();
 
 			// upload kütüphanesi $upload_edilecek_resim_ozellikleri ne göre yuklendi
 			$this->load->library('upload', $upload_edilecek_resim_ozellikleri);
@@ -51,7 +51,7 @@
 				$database_yazilacak_bilgiler['proje_resmi'] = $database_yazilacak_bilgiler['upload_bilgileri']['file_name'];
 
 				// formdaki verileri database e yazmayı deniyoruz..
-				if($this->proje_ekle_model->proje_ekledeki_bilgileri_database_aktarma($database_yazilacak_bilgiler)) {
+				if($this->proje_model->proje_ekledeki_bilgileri_database_aktarma($database_yazilacak_bilgiler)) {
 						// eğer form bilgileri database e aktarma işlemi başarılı ise, proje_ekle_başarılı sayfasını girilen bilgiler
 						// ile ekrana yazdırıyoruz 
 						$this->load->view('arge/proje_ekle/proje_ekle_basarili', $database_yazilacak_bilgiler);

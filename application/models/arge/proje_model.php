@@ -35,7 +35,7 @@
 			return $proje_resmi_upload_ozellikleri;
 		}
 
-		public function proje_isimlerini_databaseden_cek()
+		public function proje_bilgilerini_databaseden_cek()
 		{
 			$query =  $this->db->get('proje');
 

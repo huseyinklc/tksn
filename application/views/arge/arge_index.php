@@ -6,7 +6,21 @@
 	
 	<body>
 		<h1>Arge sayfası</h1>
-		<p>Deneme</p>
+		<p>Projeler</p>
+
+		<?php
+			
+			foreach ($proje_bilgileri as $proje) {
+				echo '<p>';
+				echo '<a href="'. './proje/proje_goster/' . $proje->proje_id . '">';
+				echo  $proje->proje_ismi . '<br />';
+				echo '<img src="../../asset/image/proje_resimleri/' . $proje->proje_resmi . '">';
+				echo '</a>';
+				echo '</p>';
+			}
+		 ?>
+
+		 <a href="./proje_ekle">Yeni Proje eklemek için tıklayınız..</a>
 		<a href="giris/cikis">Çıkış için tıklayınız...</a>
 	</body>
 

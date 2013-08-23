@@ -5,8 +5,9 @@
 	</head>
 	
 	<body>
-		<h1>Arge sayfası</h1>
-		<p>Deneme</p>
+		<h1><?php echo $proje_bilgileri[0]->proje_ismi; ?></h1>
+
+		<p></p>
 		
 	</body>
 
