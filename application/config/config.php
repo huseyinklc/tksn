@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'localhost/tksn/index.php/';
+$config['base_url']	= '';
 
 /*
 |--------------------------------------------------------------------------
