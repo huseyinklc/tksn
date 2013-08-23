@@ -9,12 +9,13 @@
 		<p>Projeler</p>
 
 		<?php
-			
+			echo '<h2>' . $hata_mesaji . '</h2>';
+
 			foreach ($proje_bilgileri as $proje) {
 				echo '<p>';
 				echo '<a href="'. './proje/proje_goster/' . $proje->proje_id . '">';
 				echo  $proje->proje_ismi . '<br />';
-				echo '<img src="../../asset/image/proje_resimleri/' . $proje->proje_resmi . '">';
+				echo '<img src="../../../asset/image/proje_resimleri/' . $proje->proje_resmi . '">';
 				echo '</a>';
 				echo '</p>';
 			}
@@ -26,4 +27,4 @@
 
 </html>
 <!-- arge_index.php dosyasının sonu  -->
-<!-- Lacation: ./applicatipn/views/arge_index.php -->
+<!-- Lacation: ./applicatipn/views/arge/arge_index.php -->

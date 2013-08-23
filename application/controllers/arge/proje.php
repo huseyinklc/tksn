@@ -34,6 +34,9 @@
 		public function index()
 		{		
 				$veri['proje_bilgileri'] = $this->proje_bilgileri;
+				$veri['hata_mesaji'] = '';
+
+				$this->proje_model->maksimum_id();
 				$this->load->view('arge/arge_index', $veri);	
 		}
 
@@ -42,16 +45,19 @@
 		 * Bu fonksiyonda $proje_id değişkenine göre databaseden bilgiler çekilerek
 		 * array biçiminde proje göster sayfasına yollandı
 		 * */
-		public function proje_goster($proje_id = 0)
+		public function proje_goster($proje_id)
 		{
-			if ($proje_id === 0 ) {
-				// buraya hata mesajı gelecek ve sayfada gösterilecek
-				$this->load->view('arge/arge_index');
+			if (!is_numeric($proje_id) || $this->proje_model->maksimum_id()[0]->proje_id < $proje_id ) {
+				$veri['proje_bilgileri'] = $this->proje_bilgileri;
+				$veri['hata_mesaji'] = 'Girdiginiz sayfa sunucuda bulunamadı';
+				$this->load->view('arge/proje/proje_bulunamadi', $veri);
 			} else {
 				// proje_id numarasına göre proje bilgileri çekiliyor..
 				$proje_bilgileri['proje_bilgileri'] = $this->proje_model->proje_goster($proje_id); 
 				$this->load->view('arge/proje_goster', $proje_bilgileri);
 			}
+
+
 		}
 
 	}

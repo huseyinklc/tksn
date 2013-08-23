@@ -50,4 +50,11 @@
 
 			return $query->result();
 		}
+
+		public function maksimum_id(){
+			$this->db->select_max('proje_id');
+			$query = $this->db->get('proje');
+
+			return $query->result();
+		}
 	}
