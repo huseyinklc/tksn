@@ -37,6 +37,7 @@
 
 				$database_yazilacak_bilgiler['upload_bilgileri'] = $this->upload->data();
 				$database_yazilacak_bilgiler['dokuman_ismi'] = $database_yazilacak_bilgiler['upload_bilgileri']['file_name'];
+				
 
 				// formdaki verileri database e yazmayı deniyoruz..
 				if($this->dokuman_model->sema_database_ekle($database_yazilacak_bilgiler)) {
