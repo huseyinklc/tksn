@@ -1,6 +1,6 @@
 <?php
 
-	class Dokuman_ekle extends CI_Model 
+	class Dokuman_model extends CI_Model 
 	{
 		public function __construct()
 		{
