@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 20, 2013 at 03:47 ÖS
+-- Generation Time: Aug 23, 2013 at 03:05 ÖS
 -- Server version: 5.5.31
 -- PHP Version: 5.4.16
 
@@ -21,6 +21,80 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `tksn` DEFAULT CHARACTER SET utf8 COLLATE utf8_turkish_ci;
 USE `tksn`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dokuman`
+--
+
+CREATE TABLE IF NOT EXISTS `dokuman` (
+  `dokuman_id` smallint(3) NOT NULL AUTO_INCREMENT,
+  `dokuman_ismi` text COLLATE utf8_turkish_ci NOT NULL,
+  `documan_turu` text COLLATE utf8_turkish_ci NOT NULL,
+  `proje_id` int(3) NOT NULL,
+  PRIMARY KEY (`dokuman_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `eleman`
+--
+
+CREATE TABLE IF NOT EXISTS `eleman` (
+  `eleman_id` mediumint(6) NOT NULL AUTO_INCREMENT,
+  `eleman_kodu` mediumint(6) NOT NULL,
+  `firma_id` smallint(3) NOT NULL,
+  `eleman_turu_id` tinyint(2) NOT NULL,
+  `resim` varchar(30) COLLATE utf8_turkish_ci NOT NULL,
+  `kilif_id` tinyint(2) NOT NULL,
+  `ozellik` text COLLATE utf8_turkish_ci NOT NULL,
+  `dokuman` varchar(30) COLLATE utf8_turkish_ci NOT NULL,
+  `adet` int(10) NOT NULL,
+  `numune` tinyint(1) NOT NULL,
+  PRIMARY KEY (`eleman_id`),
+  UNIQUE KEY `eleman_kodu` (`eleman_kodu`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=3 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `eleman_turu`
+--
+
+CREATE TABLE IF NOT EXISTS `eleman_turu` (
+  `id` tinyint(3) NOT NULL DEFAULT '0',
+  `eleman_turu` varchar(30) COLLATE utf8_turkish_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `firma`
+--
+
+CREATE TABLE IF NOT EXISTS `firma` (
+  `firma_id` smallint(3) NOT NULL AUTO_INCREMENT,
+  `firma_ismi` varchar(50) COLLATE utf8_turkish_ci NOT NULL,
+  `tel` varchar(12) COLLATE utf8_turkish_ci NOT NULL,
+  `mail` varchar(50) COLLATE utf8_turkish_ci NOT NULL,
+  `adres` varchar(300) COLLATE utf8_turkish_ci NOT NULL,
+  PRIMARY KEY (`firma_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kilif`
+--
+
+CREATE TABLE IF NOT EXISTS `kilif` (
+  `id` smallint(3) NOT NULL AUTO_INCREMENT,
+  `kilif_tipi` varchar(30) COLLATE utf8_turkish_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -57,31 +131,46 @@ CREATE TABLE IF NOT EXISTS `proje` (
   `proje_resmi` varchar(50) COLLATE utf8_turkish_ci DEFAULT NULL,
   `proje_tanimi` text COLLATE utf8_turkish_ci,
   PRIMARY KEY (`proje_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=31 ;
 
 --
 -- Dumping data for table `proje`
 --
 
 INSERT INTO `proje` (`proje_id`, `proje_ismi`, `proje_resmi`, `proje_tanimi`) VALUES
-(1, 'proje1', '', ''),
-(2, 'proje1', 'images.jpeg', 'ne ilk ne son proje'),
-(3, 'proje1', 'images.jpeg', 'ne ilk ne son proje'),
-(4, 'proje1', 'images.jpeg', 'ne ilk ne son proje'),
-(5, 'proje1', 'images.jpeg', 'ne ilk ne son proje'),
-(6, 'proje1', 'images.jpeg', ''),
-(7, 'proje1', 'images.jpeg', ''),
-(8, 'proje1', 'images.jpeg', ''),
-(9, 'poje2', 'images.jpeg', 'sadkaslşfa'),
-(10, 'poje2', 'images.jpeg', 'sadkaslşfa'),
-(11, 'poje2', 'images.jpeg', 'sadkaslşfa'),
-(12, 'poje2', 'images.jpeg', 'sadkaslşfa'),
-(13, 'poje2', 'images.jpeg', 'sadkaslşfa'),
-(14, 'poje2', 'images.jpeg', 'sadkaslşfa'),
-(15, 'poje2', 'images.jpeg', 'sadkaslşfa'),
-(16, 'poje2', 'images.jpeg', 'sadkaslşfa'),
-(17, 'poje2', 'images1.jpeg', 'sadkaslşfa'),
-(18, 'poje2', 'images2.jpeg', 'sadkaslşfa');
+(1, 'proje1', 'images.jpeg', '1'),
+(2, 'proje2', 'images.jpeg', '2'),
+(3, 'proje3', 'images.jpeg', '3'),
+(4, 'proje4', 'images.jpeg', '4'),
+(5, 'proje5', 'images.jpeg', '5'),
+(6, 'proje6', 'images.jpeg', 'proje id = 6'),
+(7, 'proje7', 'images.jpeg', 'bu yedinci proje');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `proje_eleman_id`
+--
+
+CREATE TABLE IF NOT EXISTS `proje_eleman_id` (
+  `proje_eleman_id` mediumint(5) NOT NULL AUTO_INCREMENT,
+  `proje_id` smallint(3) NOT NULL,
+  `eleman_id` mediumint(5) NOT NULL,
+  PRIMARY KEY (`proje_eleman_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sema`
+--
+
+CREATE TABLE IF NOT EXISTS `sema` (
+  `sema_id` mediumint(2) NOT NULL AUTO_INCREMENT,
+  `sema_ismi` text COLLATE utf8_turkish_ci NOT NULL,
+  `proje_id` mediumint(2) NOT NULL,
+  PRIMARY KEY (`sema_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
