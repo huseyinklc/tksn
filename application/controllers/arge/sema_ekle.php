@@ -6,7 +6,7 @@
 		public function __construct()
 		{
 			parent::__construct();
-			 $this->load->model('./arge/sema_ekle_model');
+			 $this->load->model('./arge/sema_model');
 			 $this->load->helper('form');
 		}
 
@@ -20,7 +20,7 @@
 		{
 
 
-			$ayar = $this->sema_ekle_model->sema_upload_ozellikleri();
+			$ayar = $this->sema_model->sema_upload_ozellikleri();
 			$this->load->library('upload', $ayar);	
 			$sema = 'sema';
 
@@ -39,7 +39,7 @@
 				$database_yazilacak_bilgiler['sema_ismi'] = $database_yazilacak_bilgiler['upload_bilgileri']['file_name'];
 
 				// formdaki verileri database e yazmayı deniyoruz..
-				if($this->sema_ekle_model->sema_database_ekle($database_yazilacak_bilgiler)) {
+				if($this->sema_model->sema_database_ekle($database_yazilacak_bilgiler)) {
 						// eğer form bilgileri database e aktarma işlemi başarılı ise, proje_ekle_başarılı sayfasını girilen bilgiler
 						// ile ekrana yazdırıyoruz 
 						$this->load->view('arge/sema/sema_ekle_basarili', $database_yazilacak_bilgiler);
