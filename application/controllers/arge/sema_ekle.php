@@ -14,7 +14,7 @@
 		{
 
 			$veri['dosya_yukleme_hatasi'] = '';
-			$this->load->view('arge/sema_ekle/sema_ekle', $veri);
+			$this->load->view('arge/sema/sema_ekle', $veri);
 		}
 		public function form_kontrolu()
 		{
@@ -28,7 +28,7 @@
 			{
 				// hata durumu 
 				$veri['dosya_yukelem_hatasi'] = $this->upload->display_errors();
-				$this->load->view('arge/sema_ekle/sema_ekle', $veri);
+				$this->load->view('arge/sema/sema_ekle', $veri);
  				
 			} else {
 
@@ -42,7 +42,7 @@
 				if($this->sema_ekle_model->sema_database_ekle($database_yazilacak_bilgiler)) {
 						// eğer form bilgileri database e aktarma işlemi başarılı ise, proje_ekle_başarılı sayfasını girilen bilgiler
 						// ile ekrana yazdırıyoruz 
-						$this->load->view('arge/sema_ekle/sema_ekle_basarili', $database_yazilacak_bilgiler);
+						$this->load->view('arge/sema/sema_ekle_basarili', $database_yazilacak_bilgiler);
 				} else {
 					// Buraya internal server error sayfası gelecek!!!
 					echo 'internal server error';
