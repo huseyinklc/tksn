@@ -1,5 +1,4 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-echo 	'<meta charset="utf-8">';
 class giris extends CI_Controller
 {
 
@@ -87,21 +86,21 @@ class giris extends CI_Controller
 			case 0:
 				$uyelik_turu_sesion = array('uyelik_turu'=>'0');
 				$this->session->set_userdata($uyelik_turu_sesion);
-				$this->load->view('root/root_index');
+				redirect('root/root_index', 'refresh');
 				break;
 			case 1: 
 				$uyelik_turu_sesion = array('uyelik_turu'=>'1');
 				$this->session->set_userdata($uyelik_turu_sesion);
-				$this->load->view('arge/arge_index');
+				redirect('arge/arge_index', 'refresh');
 				break;
 			case 2:
 				$uyelik_turu_sesion = array('uyelik_turu'=>'2');
 				$this->session->set_userdata($uyelik_turu_sesion);
-				$this->load->view('depo/depo_index');
+				redirect('depo/depo_index', 'refresh');
 				break;
 			default:
-				// burası için hata sayfası yapılacak...
-				echo 'kullanici tipini göre sayfa bulunamadı';
+				$veri['form_hatasi'] = 'Girilen Kullanıcı Adı Sistemde Bulunamadı!..';
+				$this->load->view('giris',$veri);
 		} 
 	}
 	

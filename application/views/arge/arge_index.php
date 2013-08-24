@@ -9,7 +9,7 @@
 		<p>Projeler</p>
 
 		<?php
-			echo '<h2>' . $hata_mesaji . '</h2>';
+			print_r($this->session->all_userdata());
 
 			foreach ($proje_bilgileri as $proje) {
 				echo '<p>';

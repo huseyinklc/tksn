@@ -8,7 +8,7 @@
 
 	<? echo $dosya_yukleme_hatasi; ?>
 	<?php $this->load->helper('form'); ?>
-	<?php echo form_open_multipart('arge/sema_ekle/form_kontrolu'); ?>
+	<?php echo form_open_multipart('arge/sema_ekle/sema_eklendi'); ?>
 
 	<p>
 	<label>Lütfen Eklemek istediğiniz şemayı seçiniz: </label>

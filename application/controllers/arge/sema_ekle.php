@@ -16,7 +16,7 @@
 			$veri['dosya_yukleme_hatasi'] = '';
 			$this->load->view('arge/sema/sema_ekle', $veri);
 		}
-		public function form_kontrolu()
+		public function sema_eklendi()
 		{
 
 
@@ -27,7 +27,7 @@
 			if(!$this->upload->do_upload($sema))
 			{
 				// hata durumu 
-				$veri['dosya_yukelem_hatasi'] = $this->upload->display_errors();
+				$veri['dosya_yukleme_hatasi'] = $this->upload->display_errors();
 				$this->load->view('arge/sema/sema_ekle', $veri);
  				
 			} else {
