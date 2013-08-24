@@ -45,7 +45,14 @@
 
 		public function sema_goster()
 		{
-			
+			// sema tablomuz içerisindeki tüm bilgileri çekiyoruz..
+			$query = $this->db->get('sema');
+
+			// sorgumuzdaki tüm bilgiler array içerisinde sema_bilgileri arrayine atılıyor
+			$sema_bilgileri = $query->result();
+
+			return $sema_bilgileri;
+
 		}
 
 	}

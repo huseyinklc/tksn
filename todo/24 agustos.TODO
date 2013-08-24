@@ -1,6 +1,6 @@
- ☐ Eklenen şema ismi database içine yazılacak
+ ✔ Eklenen şema ismi database içine yazılacak @done (13-08-24 17:39)
  ☐ Database'de bulunan şemalar, şemalar sayfasına echo edilecek..
- ☐ Şema ekle dökümantasyon yapılacak
+ ✔ Şema ekle dökümantasyon yapılacak @done (13-08-24 17:39)
  ☐ Sessionlar yardımı ile sadece ilgili birim kendi sayfalarına erişebilecek
  ☐ Eleman Ekle sayfası yapılacak
  ☐ Şema ekle sayfası için proje_id session ile çekilecek ve database öyle kaydedilecek.

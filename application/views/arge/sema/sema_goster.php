@@ -6,11 +6,11 @@
 	
 	<body>
 		<h1>Şemalar</h1>
-		<h3>
 			<?php
-
-			 ?>
-		</h3>
+				foreach ($sema_bilgileri as $sema) {
+					echo '<img src="../../asset/image/sema/' . $sema->sema_ismi . '" />';
+				}
+			 ?>	
 	</body>
 </html>
 <!-- End of the file sema_goster.php -->
