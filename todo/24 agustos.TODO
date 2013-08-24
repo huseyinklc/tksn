@@ -1,0 +1,9 @@
+ ☐ Eklenen şema ismi database içine yazılacak
+ ☐ Database'de bulunan şemalar, şemalar sayfasına echo edilecek..
+ ☐ Şema ekle dökümantasyon yapılacak
+ ☐ Sessionlar yardımı ile sadece ilgili birim kendi sayfalarına erişebilecek
+ ☐ Eleman Ekle sayfası yapılacak
+ ☐ Şema ekle sayfası için proje_id session ile çekilecek ve database öyle kaydedilecek.
+ ☐ Döküman sayfası tamamlanacak
+ ☐ Proje Elemanları diye bir sayfa yapılacak
+ ☐ Argeden biten ürün girilebilecek sayfa yapılacak

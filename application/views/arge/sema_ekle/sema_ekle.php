@@ -23,3 +23,5 @@
 	</body>
 
 </html>
+<!-- End of the file sema_ekle.php -->
+<!-- Location: ./application/views/arge/sema_ekle/ -->

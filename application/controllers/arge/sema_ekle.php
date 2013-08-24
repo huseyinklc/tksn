@@ -18,13 +18,18 @@
 		}
 		public function form_kontrolu()
 		{
-			$ayar = $this->sema_ekle_model->sema_upload_ozellikleri();
 
+
+			$ayar = $this->sema_ekle_model->sema_upload_ozellikleri();
 			$this->load->library('upload', $ayar);	
-			
-			if(! $this->upload->do_upload())
+			$sema = 'sema';
+
+			if(!$this->upload->do_upload($sema))
 			{
- 				// hata durumu 
+				// hata durumu 
+				$veri['dosya_yukelem_hatasi'] = $this->upload->display_errors();
+				$this->load->view('arge/sema_ekle/sema_ekle', $veri);
+ 				
 			} else {
 
 				// Eğer herşey yolunda gittiyse
@@ -45,3 +50,5 @@
 			}
 		}
 	}
+/* End of the file sema_ekle.php */
+/* Location: ./application/controllers/arge/ */

@@ -6,10 +6,15 @@
 		{
 			parent::__construct();
 		}
-
+		/**
+		 * upload edilecek şema özelliklerini tutuyoruz. Controller'den çağırıp
+		 * gerekli kütüphane yüklemesinde kullanıyoruz.
+		 *  
+		 * @return array
+		 */
 		public function sema_upload_ozellikleri()
 		{
-			$sema_upload_ozellikleri['upload_path'] = './asset/image/proje_resimleri';
+			$sema_upload_ozellikleri['upload_path'] = './asset/image/sema/';
 			$sema_upload_ozellikleri['allowed_types'] = 'gif|jpg|png|jpeg';
 			$sema_upload_ozellikleri['max_size']	= '2048';
 			$sema_upload_ozellikleri['max_width']  = '1024';
@@ -17,17 +22,26 @@
 
 			return $sema_upload_ozellikleri;
 		}
-		public function sema_database_ekle()
+		
+		/**
+		 * formdan gelen ve kontrole edilmiş verileri database içine yazıyoruz..
+		 * 
+		 * @return boolean
+		 */
+		public function sema_database_ekle($formdan_suzulen_veriler)
 		{
 
-			$proje_resmi = $formdan_suzulen_veriler['proje_resmi'];
+			// fonksiyona gönderilen bilgiler database yazmak için değişkene aktarılıyor..
+			$sema_ismi = $formdan_suzulen_veriler['sema_ismi'];
 
-			// database eklenecek bilgiler array içerisine aktarılıyor
-			$database_eklenecek_veriler = array('proje_ismi'=>"$proje_ismi",'proje_resmi'=>"$proje_resmi", 'proje_tanimi'=>"$proje_tanimi");
+			// database eklenecek bilgiler array içerisine aktarılıyor..
+			$database_eklenecek_veriler = array('sema_ismi'=>"$sema_ismi",);
 			
 			// database insert etme işlemi başarılı ise true döndürüyoruz
-			if ($this->db->insert('proje', $database_eklenecek_veriler)) {
+			if ($this->db->insert('sema', $database_eklenecek_veriler)) {
 				return true;
 			}
 		}
 	}
+/* End of the file sema_ekle_model.php */
+/* Location: ./application/models/arge/ */
