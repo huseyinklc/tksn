@@ -42,6 +42,12 @@
 				return true;
 			}
 		}
+
+		public function sema_goster()
+		{
+			
+		}
+
 	}
 /* End of the file sema_model.php */
 /* Location: ./application/models/arge/ */
