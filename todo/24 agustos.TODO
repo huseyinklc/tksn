@@ -4,11 +4,13 @@
  ✔ Şema eklendikten sonra sema/form_kontrolu gozukuyor o değiştirilecek @done (13-08-24 21:25)
  ✔ Sessionlar yardımı ile sadece ilgili birim kendi sayfalarına erişebilecek @done (13-08-25 12:58)
  ✔ Eleman Ekle sayfası yapılacak @done (13-08-25 18:29)
-     ☐ Gelen inputlar kontrol edilecek!
-     ☐ Gelen inputlar database yazılacak! 
+     ✔ Gelen inputlar kontrol edilecek! @done (13-08-25 19:27)
+     ✔ Gelen inputlar database yazılacak! @done (13-08-25 20:10)
+     ☐ Database kolon ismi ile uyuşmayan menü isimleri değiştirilecek!
+     ☐ Yanlış olmayan veriler için tekrar echo edilecek!
        ☐ Dosya ve Resim ekle kısımları Eklenecek! @later
 
  ☐ Şema ekle sayfası için proje_id session ile çekilecek ve database öyle kaydedilecek. @later
  ☐ Döküman sayfası tamamlanacak @later
  ☐ Proje Elemanları diye bir sayfa yapılacak @later
- ☐ Argeden biten ürün girilebilecek sayfa yapılacak
+ ☐ Argeden biten ürün girilebilecek sayfa yapılacak @later

@@ -21,11 +21,6 @@
 
 			// Kılıf Tipleri dropdown liste eklenebilmesi için databaseden çekildi
 			$this->kilif_tipi = $this->eleman_model->kilif_tipi();
-
-
-
-
-
 		}
 
 		public function index(){
@@ -93,8 +88,10 @@
 					$veri['eleman_adet'] = $this->input->post('eleman_adet');
 					$veri['numune'] = $this->input->post('numune');
 
+					$this->eleman_model->eleman_bilgilerini_database_yaz($veri);
+
 				// formdan çekilen bilgiler ile eleman_ekleme_basarili sayfası yüklendi 
-				$this->load->view('arge/eleman/eleman_ekleme_basarili', $veri);
+				$this->load->view('arge/eleman/eleman_ekleme_basarili');
 			}
 
 

@@ -73,6 +73,26 @@
 			}
 			return $donen_kilif_tipi;
 		}
+
+		/**
+		 * Formdan almış olduğumz değerleri database ekliyoruz
+		 * @param array $formdan_gelen_bilgiler
+		 * @return boolean
+		 */
+		public function eleman_bilgilerini_database_yaz($gelen_bilgi)
+		{
+			$eklenecek_veri = array(
+									'eleman_kodu'=>$gelen_bilgi['eleman_kodu'], 'firma_id'=>$gelen_bilgi['firma_ismi'],
+									'eleman_turu_id'=>$gelen_bilgi['eleman_turu'], 'kilif_id'=>$gelen_bilgi['kilif_tipi'],
+									'ozellik'=>$gelen_bilgi['eleman_ozellik'], 'adet'=>$gelen_bilgi['eleman_adet'],
+									'numune'=>$gelen_bilgi['numune']
+									);
+
+			$this->db->insert('eleman', $eklenecek_veri);
+			
+		}
+
+
 	}
 /* End of the file: eleman_model.php */
 /* Location: ./application/models/arge/ */
