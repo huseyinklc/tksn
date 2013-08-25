@@ -28,11 +28,15 @@
 				echo form_dropdown('eleman_turu', $eleman_turu);
 			?>	
 		</p> 
-
+		<p>
+			<?php
+				echo form_label('Kılıf Tipi: ', 'kilif_tipi'); 
+				echo form_dropdown('kilif_tipi', $kilif_tipi);
+			?>	
+		</p> 
 		
-
 		<!-- Resim yükleme gelecek -->
-		<!-- Kılıf id gelecek -->
+
 		<p>
 			<?php
 				echo form_label('Elaman Özellikleri: ', 'eleman_ozellik'); 

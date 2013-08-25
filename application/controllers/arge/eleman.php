@@ -3,6 +3,7 @@
 	{
 		public $eleman_turu;
 		public $firma_ismi;
+		public $kilif_tipi;
 
 		public function __construct()
 		{
@@ -17,6 +18,10 @@
 
 			// Firma isimleri dropdown liste eklenebilmesi için databaseden çekildi
 			$this->firma_ismi = $this->eleman_model->firma_ismi();
+
+			// Kılıf Tipleri dropdown liste eklenebilmesi için databaseden çekildi
+			$this->kilif_tipi = $this->eleman_model->kilif_tipi();
+
 		}
 
 		public function index(){
@@ -32,6 +37,8 @@
 			$veri['eleman_turu'] = $this->eleman_turu;
 
 			$veri['firma_ismi'] = $this->firma_ismi;
+
+			$veri['kilif_tipi'] = $this->kilif_tipi;
 
 			// eleman ekle sayfası veri arrayi ile yüklendi
 			$this->load->view('arge/eleman/eleman_ekle', $veri);
