@@ -10,8 +10,19 @@
 		}
 
 		public function index(){
-			echo 'calişiyi';
-		//	$this->load->view('eleman_goster');
+
+			$this->load->view('arge/eleman/eleman_goster');
+		}
+
+		public function eleman_ekle()
+		{
+			$this->load->helper('form');
+			$this->load->view('arge/eleman/eleman_ekle');
+		}
+
+		public function eleman_ekle_kontrol()
+		{
+
 		}
 	}
 /* End of the file: eleman.php */
