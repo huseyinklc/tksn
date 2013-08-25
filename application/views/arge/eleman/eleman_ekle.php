@@ -10,4 +10,4 @@
 
 </html>
 <!-- eleman_ekle.php dosyasının sonu  -->
-<!-- Lacation: ./applicatipn/views/arge/eleman/ -->
+<!-- Lacation: ./applicatipn/views/arge/eleman/	 -->

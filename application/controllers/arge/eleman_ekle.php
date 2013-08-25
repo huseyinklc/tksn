@@ -1,5 +1,5 @@
 <?php 
-	class Eleman extends CI_extends
+	class Eleman_Ekle extends CI_extends
 	{
 		public function __construct()
 		{
@@ -10,8 +10,8 @@
 		}
 
 		public function index(){
-
+			$this->view->load('eleman_ekle');
 		}
 	}
-/* End of the file: eleman.php */
+/* End of the file: eleman_ekle.php */
 /* Location: ./application/controllers/arge/eleman/ */
