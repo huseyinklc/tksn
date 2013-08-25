@@ -5,9 +5,19 @@
 		
 		public function __construct()
 		{
+			// frameworkün düzgün çalışması için parent __construct yüklemek gerektiği için yükledik
 			parent::__construct();
+			
+			// database işlemleri için 
 			 $this->load->model('./arge/sema_model');
+
+			 // form işlemleri için
 			 $this->load->helper('form');
+
+			 // kullanıcı tipinin arge olup olmadığını öğrenmek için
+			 if( $this->session->userdata('uyelik_turu') != 2) {
+			 	redirect('giris', 'refresh');
+			 }
 		}
 
 		public function index()

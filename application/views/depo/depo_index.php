@@ -6,6 +6,7 @@
 	
 	<body>
 		<h1>Depo sayfası</h1>
+		<?php print_r($this->session->all_userdata()); ?>
 		<a href="gelen_malzeme_gir">Gelen Mazleme Gir</a>
 		<a href="">Bitmiş Ürün Gir</a>
 		<a href="">Argeye Malzeme Çıkışı</a>

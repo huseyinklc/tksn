@@ -8,6 +8,6 @@
 		}
 		public function index()
 		{
-			$this->load->view('arge_index');
+			$this->load->view('arge/arge_index');
 		}
 	}

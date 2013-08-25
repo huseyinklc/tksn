@@ -46,19 +46,12 @@ class giris extends CI_Controller
 			$veri['kullanici_adi'] = $this->input->post('kadi');
 			$veri['sifre'] = $this->input->post('sifre');
 
-			// ilk fonksiyon kullanıcı adı ve şifreye ait kullanıcı olup olmadığını kontrol etti
-
-			if($this->giris_model->giris_database_kontrolu($veri)) {
-
-				// Eğer kullanıcı bulunduysa kullanıcı bilgileri array içine aktarıldı
-				$kullanici_bilgileri =	$this->giris_model->kullanici_bilgileri_databaseden_cekme($veri);
-
+			if($this->giris_model->kullanici_bilgileri_databaseden_cekme($veri) ) {
+				$kullanici_bilgileri = $this->giris_model->kullanici_bilgileri_databaseden_cekme($veri);
 			} else {
-				
-				// Bulunamıyan kullanıcı bilgileri boş string haline getirildi..
-				$kullanici_bigileri = '';
-
+				$kullanici_bilgileri = '';
 			}
+	 		
 	 		
 	 		// uyelik turu fonksiyon yardimi ile çekildi..
 		 	$uyelik_turu = $this->uyelik_turu($kullanici_bilgileri);		 	
@@ -83,18 +76,18 @@ class giris extends CI_Controller
 	{
 		
 		switch ($uyelik_turu) {
-			case 0:
-				$uyelik_turu_sesion = array('uyelik_turu'=>'0');
+			case 1:
+				$uyelik_turu_sesion = array('uyelik_turu'=>'1');
 				$this->session->set_userdata($uyelik_turu_sesion);
 				redirect('root/root_index', 'refresh');
 				break;
-			case 1: 
-				$uyelik_turu_sesion = array('uyelik_turu'=>'1');
-				$this->session->set_userdata($uyelik_turu_sesion);
-				redirect('arge/arge_index', 'refresh');
-				break;
-			case 2:
+			case 2: 
 				$uyelik_turu_sesion = array('uyelik_turu'=>'2');
+				$this->session->set_userdata($uyelik_turu_sesion);
+				redirect('arge/proje', 'refresh');
+				break;
+			case 3:
+				$uyelik_turu_sesion = array('uyelik_turu'=>'3');
 				$this->session->set_userdata($uyelik_turu_sesion);
 				redirect('depo/depo_index', 'refresh');
 				break;

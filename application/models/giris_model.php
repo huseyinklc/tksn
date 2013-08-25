@@ -1,27 +1,8 @@
 	<?php
 
-	/** Kullanıcıların databasede olup olmadığını kontrol ediyoruz
-	 * 
-	 * Formdan gelen kullanıcı adı ve şifre controller kısmından çekiliyor
-	 * 
-	 * 
-	 * 
-	 * 
-	 * @param  array $veri kullanıcı_adı ve sifre key'lerine sahip
-	 * @return [type]       [description]
-	 */
 	class Giris_Model extends CI_Model
 	{
-		public function giris_database_kontrolu($veri)
-	{	
-		if($this->kullanici_bilgileri_databaseden_cekme($veri)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-
+	
 
 		/**
 		 * [kullanici_bilgileri_databaseden_cekme description
@@ -34,16 +15,15 @@
 		 */
 		public function kullanici_bilgileri_databaseden_cekme($kullaniciadi_sifre)
 		{
+			print_r($kullaniciadi_sifre);
 			$this->db->select("*")->
 			where("kullanici_adi = '" . $kullaniciadi_sifre['kullanici_adi'] . "' AND sifre = '" . $kullaniciadi_sifre['sifre'] . "'" );
 			$query = $this->db->get('kullanicilar');
 			$databaseden_donen_bilgiler = $query->result();
 
-			if($databaseden_donen_bilgiler) {
-				return $databaseden_donen_bilgiler;
-			} else {
-				return false;
-			}
+			print_r($databaseden_donen_bilgiler);
+
+			return $databaseden_donen_bilgiler;
 
 		}
 }

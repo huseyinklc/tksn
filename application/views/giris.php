@@ -24,8 +24,8 @@
 	
 	<!-- form yardımcı dosyasını yükledik -->
 	<?php $this->load->helper('form'); ?>
-	<div id =giris_formu>
-
+	<div id ="giris_formu">
+	<P><?php echo $form_hatasi; ?></p>
 	<!-- form controller daki formKontrolu fonksiyonuna submit edecek şekilde ayarladık  -->
 	<?php echo form_open('giris/formKontrolu'); ?>
 
@@ -34,7 +34,7 @@
 	<p>&nbsp;</p>
 	<p>&nbsp;</p>
 	<p>&nbsp;</p>
-	<P><?php echo $form_hatasi; ?></p>
+
 	<p>
 		<label>Kullanıcı Adı:
 			<?php 

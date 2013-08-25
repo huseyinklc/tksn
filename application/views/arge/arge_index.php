@@ -9,16 +9,12 @@
 		<p>Projeler</p>
 
 		<?php
-			print_r($this->session->all_userdata());
-
-			foreach ($proje_bilgileri as $proje) {
-				echo '<p>';
-				echo '<a href="'. './proje/proje_goster/' . $proje->proje_id . '">';
-				echo  $proje->proje_ismi . '<br />';
-				echo '<img src="../../../asset/image/proje_resimleri/' . $proje->proje_resmi . '">';
-				echo '</a>';
-				echo '</p>';
+			if($this->session->userdata('uyelik_turu') == 1){
+				echo 'arge sayfasi bu borumu';
 			}
+			echo $this->session->userdata('uyelik_turu');
+
+
 		 ?>
 
 		 <a href="./proje_ekle">Yeni Proje eklemek için tıklayınız..</a>
