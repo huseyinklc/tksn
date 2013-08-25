@@ -7,6 +7,8 @@
 	<body>
 		<h1>Eleman Ekleme Sayfası</h1>
 
+		<?php echo $form_hatalari; ?>
+
 		<?php echo form_open_multipart('arge/eleman/eleman_ekle_kontrol') ?>
 		<p>
 			<?php
@@ -52,9 +54,19 @@
 				echo form_input($eleman_adet_ozellikleri);
 			?>	
 		</p>
-		<!-- Eleman yükleme sayfası yapılacak!! -->
-	</body>
 
+		<p>
+			<?php
+				echo form_label('Numune: ', 'numune');
+				$numune = array('0'=>'Hayır', '1'=>'Evet');
+				echo form_dropdown('numune', $numune);
+			?>	
+		</p>
+			<?php
+				echo form_submit('ekle', 'Ekle');
+				echo form_close(); 
+			?>
+	</body>
 </html>
 <!-- eleman_ekle.php dosyasının sonu  -->
 <!-- Lacation: ./applicatipn/views/arge/eleman/	 -->

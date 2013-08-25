@@ -6,7 +6,7 @@
 	
 	<body>
 		<h1>Eleman Ekleme Başarılı</h1>
-
+		<!-- Eklenen elemanların bilgileri yazılacak  -->
 	
 		
 	</body>
