@@ -14,13 +14,13 @@
 				$eleman_kodu_ozellikleri = array('name'=>'eleman_kodu', 'id'=>'eleman_kodu', 'maxlenght'=>'70');
 				echo form_input($eleman_kodu_ozellikleri);
 			?>	
-		</p> 
+		</p>
+
 			<!-- Eleman türü ve firma türü droplist şeklinde echo edilecek -->
 			<!-- Droplist'te echo edilmeden önce database'den bilgiler çekilecek.. -->
 		<p>
 			<?php
 				echo form_label('Eleman Türü: ', 'eleman_turu'); 
-				$eleman_turu = array('bir'=>'bir', 'iki'=>'iki');
 				echo form_dropdown('eleman_turu', $eleman_turu);
 			?>	
 		</p> 
