@@ -2,6 +2,7 @@
 	class Eleman extends CI_Controller
 	{
 		public $eleman_turu;
+		public $firma_ismi;
 
 		public function __construct()
 		{
@@ -13,6 +14,9 @@
 
 			// Eleman türleri dropdown liste eklenebilmesi için databaseden çekildi
 			$this->eleman_turu = $this->eleman_model->eleman_turu();
+
+			// Firma isimleri dropdown liste eklenebilmesi için databaseden çekildi
+			$this->firma_ismi = $this->eleman_model->firma_ismi();
 		}
 
 		public function index(){
@@ -26,6 +30,8 @@
 
 			// Databaseden çekilen eleman türleri eleman_ekle sayfasına yollanabilmek için veri arrayi içine atıldı
 			$veri['eleman_turu'] = $this->eleman_turu;
+
+			$veri['firma_ismi'] = $this->firma_ismi;
 
 			// eleman ekle sayfası veri arrayi ile yüklendi
 			$this->load->view('arge/eleman/eleman_ekle', $veri);

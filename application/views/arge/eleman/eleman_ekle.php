@@ -16,8 +16,12 @@
 			?>	
 		</p>
 
-			<!-- Eleman türü ve firma türü droplist şeklinde echo edilecek -->
-			<!-- Droplist'te echo edilmeden önce database'den bilgiler çekilecek.. -->
+		<p>
+			<?php
+				echo form_label('Firma Ismi: ', 'firma_ismi'); 
+				echo form_dropdown('firma_ismi', $firma_ismi);
+			?>	
+		</p> 
 		<p>
 			<?php
 				echo form_label('Eleman Türü: ', 'eleman_turu'); 
