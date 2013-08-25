@@ -2,7 +2,7 @@
  ✔ Database'de bulunan şemalar, şemalar sayfasına echo edilecek.. @done (13-08-24 21:04)
  ✔ Şema ekle dökümantasyon yapılacak @done (13-08-24 17:39)
  ✔ Şema eklendikten sonra sema/form_kontrolu gozukuyor o değiştirilecek @done (13-08-24 21:25)
- ☐ Sessionlar yardımı ile sadece ilgili birim kendi sayfalarına erişebilecek
+ ✔ Sessionlar yardımı ile sadece ilgili birim kendi sayfalarına erişebilecek @done (13-08-25 12:58)
  ☐ Eleman Ekle sayfası yapılacak
  ☐ Şema ekle sayfası için proje_id session ile çekilecek ve database öyle kaydedilecek.
  ☐ Döküman sayfası tamamlanacak
