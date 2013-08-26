@@ -12,8 +12,9 @@
 		<?php echo form_open_multipart('arge/eleman/eleman_ekle_kontrol') ?>
 		<p>
 			<?php
-				echo form_label('Eleman Kodu: ', 'elaman_kodu'); 
-				$eleman_kodu_ozellikleri = array('name'=>'eleman_kodu', 'id'=>'eleman_kodu', 'maxlenght'=>'70');
+				echo form_label('Eleman Kodu: ', 'elaman_kodu');
+				$eleman_kodu = set_value('eleman_kodu'); 
+				$eleman_kodu_ozellikleri = array('name'=>'eleman_kodu', 'id'=>'eleman_kodu', 'maxlenght'=>'70', 'value'=>$eleman_kodu);
 				echo form_input($eleman_kodu_ozellikleri);
 			?>	
 		</p>
@@ -40,8 +41,9 @@
 		</p> 
 		<p>
 			<?php
-				echo form_label('Elaman Özellikleri: ', 'ozellik'); 
-				$eleman_ozellik_ozellikleri = array('name'=>'ozellik', 'id'=>'ozellik', 'maxlenght'=>'1000');
+				echo form_label('Elaman Özellikleri: ', 'ozellik');
+				$ozellik = set_value('ozellik'); 
+				$eleman_ozellik_ozellikleri = array('name'=>'ozellik', 'id'=>'ozellik', 'maxlenght'=>'1000', 'value'=>$ozellik);
 				echo form_input($eleman_ozellik_ozellikleri);
 			?>	
 		</p>
@@ -49,7 +51,8 @@
 		<p>
 			<?php 
 				echo form_label('Eleman Adeti: ', 'adet');
-				$adet_ozellikleri = array('name'=>'adet', 'id'=>'adet', 'maxlenght'=>'5');
+				$adet = set_value('adet');
+				$adet_ozellikleri = array('name'=>'adet', 'id'=>'adet', 'maxlenght'=>'5', 'value'=>$adet);
 				echo form_input($adet_ozellikleri);
 			?>	
 		</p>
@@ -57,8 +60,8 @@
 		<p>
 			<?php
 				echo form_label('Numune: ', 'numune');
-				$numune = array('0'=>'Hayır', '1'=>'Evet');
-				echo form_dropdown('numune', $numune);
+				$numune_ozellikleri = array('0'=>'Hayır', '1'=>'Evet');
+				echo form_dropdown('numune', $numune_ozellikleri);
 			?>	
 		</p>
 			<?php
