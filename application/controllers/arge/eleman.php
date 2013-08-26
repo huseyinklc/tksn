@@ -54,8 +54,8 @@
 
 
 			$this->form_validation->set_rules('eleman_kodu', 'Eleman Kodu', 'trim|required|min_length[2]|max_length[50]|xss_clean');
-			$this->form_validation->set_rules('eleman_ozellik', 'Eleman Özellik', 'trim|required|min_length[2]|max_length[1000]|xss_clean');
-			$this->form_validation->set_rules('eleman_adet', 'Eleman Adeti', 'trim|required|min_length[1]|max_length[8]|xss_clean|numeric');
+			$this->form_validation->set_rules('ozellik', 'Eleman Özellik', 'trim|required|min_length[2]|max_length[1000]|xss_clean');
+			$this->form_validation->set_rules('adet', 'Eleman Adeti', 'trim|required|min_length[1]|max_length[8]|xss_clean|numeric');
 
 			if($this->form_validation->run() == FALSE) {
 				// eğer formda hata varsa 
@@ -81,11 +81,11 @@
 			} else {
 
 					$veri['eleman_kodu'] = $this->input->post('eleman_kodu');
-					$veri['firma_ismi'] = $this->input->post('firma_ismi');
-					$veri['eleman_turu'] = $this->input->post('eleman_turu');
-					$veri['kilif_tipi'] = $this->input->post('kilif_tipi');
-					$veri['eleman_ozellik'] = $this->input->post('eleman_ozellik');
-					$veri['eleman_adet'] = $this->input->post('eleman_adet');
+					$veri['firma_id'] = $this->input->post('firma_id');
+					$veri['eleman_turu_id'] = $this->input->post('eleman_turu_id');
+					$veri['kilif_id'] = $this->input->post('kilif_id');
+					$veri['ozellik'] = $this->input->post('ozellik');
+					$veri['adet'] = $this->input->post('adet');
 					$veri['numune'] = $this->input->post('numune');
 
 					$this->eleman_model->eleman_bilgilerini_database_yaz($veri);

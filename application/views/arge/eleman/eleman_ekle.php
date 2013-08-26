@@ -20,38 +20,37 @@
 
 		<p>
 			<?php
-				echo form_label('Firma Ismi: ', 'firma_ismi'); 
-				echo form_dropdown('firma_ismi', $firma_ismi);
+				echo form_label('Firma Ismi: ', 'firma_id'); 
+				echo form_dropdown('firma_id', $firma_ismi);
 			?>	
 		</p> 
 		<p>
 			<?php
-				echo form_label('Eleman Türü: ', 'eleman_turu'); 
-				echo form_dropdown('eleman_turu', $eleman_turu);
+				echo form_label('Eleman Türü: ', 'eleman_turu_id'); 
+				echo form_dropdown('eleman_turu_id', $eleman_turu);
 			?>	
 		</p> 
-		<p>
-			<?php
-				echo form_label('Kılıf Tipi: ', 'kilif_tipi'); 
-				echo form_dropdown('kilif_tipi', $kilif_tipi);
-			?>	
-		</p> 
-		
-		<!-- Resim yükleme gelecek -->
 
+		<!-- Resim yükleme gelecek -->
 		<p>
 			<?php
-				echo form_label('Elaman Özellikleri: ', 'eleman_ozellik'); 
-				$eleman_ozellik_ozellikleri = array('name'=>'eleman_ozellik', 'id'=>'eleman_ozellik', 'maxlenght'=>'1000');
+				echo form_label('Kılıf Tipi: ', 'kilif_id'); 
+				echo form_dropdown('kilif_id', $kilif_tipi);
+			?>	
+		</p> 
+		<p>
+			<?php
+				echo form_label('Elaman Özellikleri: ', 'ozellik'); 
+				$eleman_ozellik_ozellikleri = array('name'=>'ozellik', 'id'=>'ozellik', 'maxlenght'=>'1000');
 				echo form_input($eleman_ozellik_ozellikleri);
 			?>	
 		</p>
 		<!-- Eleman döküman yükleme gelecek -->
 		<p>
 			<?php 
-				echo form_label('Eleman Adeti: ', 'eleman_adet');
-				$eleman_adet_ozellikleri = array('name'=>'eleman_adet', 'id'=>'eleman_adet', 'maxlenght'=>'5');
-				echo form_input($eleman_adet_ozellikleri);
+				echo form_label('Eleman Adeti: ', 'adet');
+				$adet_ozellikleri = array('name'=>'adet', 'id'=>'adet', 'maxlenght'=>'5');
+				echo form_input($adet_ozellikleri);
 			?>	
 		</p>
 

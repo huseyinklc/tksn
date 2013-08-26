@@ -82,9 +82,9 @@
 		public function eleman_bilgilerini_database_yaz($gelen_bilgi)
 		{
 			$eklenecek_veri = array(
-									'eleman_kodu'=>$gelen_bilgi['eleman_kodu'], 'firma_id'=>$gelen_bilgi['firma_ismi'],
-									'eleman_turu_id'=>$gelen_bilgi['eleman_turu'], 'kilif_id'=>$gelen_bilgi['kilif_tipi'],
-									'ozellik'=>$gelen_bilgi['eleman_ozellik'], 'adet'=>$gelen_bilgi['eleman_adet'],
+									'eleman_kodu'=>$gelen_bilgi['eleman_kodu'], 'firma_id'=>$gelen_bilgi['firma_id'],
+									'eleman_turu_id'=>$gelen_bilgi['eleman_turu_id'], 'kilif_id'=>$gelen_bilgi['kilif_id'],
+									'ozellik'=>$gelen_bilgi['ozellik'], 'adet'=>$gelen_bilgi['adet'],
 									'numune'=>$gelen_bilgi['numune']
 									);
 
