@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 25, 2013 at 07:11 ÖS
+-- Generation Time: Aug 26, 2013 at 03:47 ÖS
 -- Server version: 5.5.31
 -- PHP Version: 5.4.16
 
@@ -44,25 +44,37 @@ CREATE TABLE IF NOT EXISTS `dokuman` (
 
 CREATE TABLE IF NOT EXISTS `eleman` (
   `eleman_id` mediumint(6) NOT NULL AUTO_INCREMENT,
-  `eleman_kodu` mediumint(6) NOT NULL,
+  `eleman_kodu` mediumint(10) NOT NULL,
   `firma_id` smallint(3) NOT NULL,
   `eleman_turu_id` tinyint(2) NOT NULL,
   `resim` varchar(30) COLLATE utf8_turkish_ci NOT NULL,
   `kilif_id` tinyint(2) NOT NULL,
-  `ozellik` text COLLATE utf8_turkish_ci NOT NULL,
+  `ozellik` varchar(10000) COLLATE utf8_turkish_ci NOT NULL,
   `dokuman` varchar(30) COLLATE utf8_turkish_ci NOT NULL,
   `adet` int(10) NOT NULL,
   `numune` tinyint(1) NOT NULL,
-  PRIMARY KEY (`eleman_id`),
-  UNIQUE KEY `eleman_kodu` (`eleman_kodu`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=2 ;
+  PRIMARY KEY (`eleman_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=32 ;
 
 --
 -- Dumping data for table `eleman`
 --
 
 INSERT INTO `eleman` (`eleman_id`, `eleman_kodu`, `firma_id`, `eleman_turu_id`, `resim`, `kilif_id`, `ozellik`, `dokuman`, `adet`, `numune`) VALUES
-(1, 0, 3, 10, '', 2, 'ozellik', '', 123, 0);
+(18, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
+(19, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
+(20, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
+(21, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
+(22, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
+(23, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
+(24, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
+(25, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
+(26, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
+(27, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
+(28, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
+(29, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
+(30, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
+(31, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1);
 
 -- --------------------------------------------------------
 
@@ -74,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `eleman_turu` (
   `id` tinyint(3) NOT NULL AUTO_INCREMENT,
   `eleman_turu` varchar(30) COLLATE utf8_turkish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `eleman_turu`
@@ -126,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `kilif` (
   `id` smallint(3) NOT NULL AUTO_INCREMENT,
   `kilif_tipi` varchar(30) COLLATE utf8_turkish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `kilif`
