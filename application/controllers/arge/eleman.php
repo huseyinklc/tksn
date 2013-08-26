@@ -80,21 +80,33 @@
 
 			} else {
 
-					$veri['eleman_kodu'] = $this->input->post('eleman_kodu');
-					$veri['firma_id'] = $this->input->post('firma_id');
-					$veri['eleman_turu_id'] = $this->input->post('eleman_turu_id');
-					$veri['kilif_id'] = $this->input->post('kilif_id');
-					$veri['ozellik'] = $this->input->post('ozellik');
-					$veri['adet'] = $this->input->post('adet');
-					$veri['numune'] = $this->input->post('numune');
+					// Formdan gelen bilgiler array içine yazıldı
+					$formdan_gelen_bilgiler['eleman_kodu'] = $this->input->post('eleman_kodu');
+					$formdan_gelen_bilgiler['firma_id'] = $this->input->post('firma_id');
+					$formdan_gelen_bilgiler['eleman_turu_id'] = $this->input->post('eleman_turu_id');
+					$formdan_gelen_bilgiler['kilif_id'] = $this->input->post('kilif_id');
+					$formdan_gelen_bilgiler['ozellik'] = $this->input->post('ozellik');
+					$formdan_gelen_bilgiler['adet'] = $this->input->post('adet');
+					$formdan_gelen_bilgiler['numune'] = $this->input->post('numune');
 
-					$this->eleman_model->eleman_bilgilerini_database_yaz($veri);
+					// Formdan gelen bilgiler database yazılmaya çalışıldı
+					if($this->eleman_model->eleman_bilgilerini_database_yaz($formdan_gelen_bilgiler)) {
+						// Eğer başarılı ise, database yazılan değerler ve dropdown'daki listeler databaseden çekilerek 
+						// ekrana yazdırılır
+						$eleman_ekle_basarili_verileri['eleman_kodu'] = $formdan_gelen_bilgiler['eleman_kodu'];
+						$eleman_ekle_basarili_verileri['firma_ismi'] = $this->eleman_model->firmaid_ismi($formdan_gelen_bilgiler['firma_id']);
+						$eleman_ekle_basarili_verileri['eleman_turu'] = $this->eleman_model->elemanid_turu($formdan_gelen_bilgiler['eleman_turu_id']);
+						$eleman_ekle_basarili_verileri['kilif'] = $this->eleman_model->kilifid_turu($formdan_gelen_bilgiler['kilif_id']);
+						$eleman_ekle_basarili_verileri['ozellik'] = $formdan_gelen_bilgiler['ozellik'];
+						$eleman_ekle_basarili_verileri['adet'] = $formdan_gelen_bilgiler['adet'];
+						$eleman_ekle_basarili_verileri['numune'] = $formdan_gelen_bilgiler['numune']; 
 
-				// formdan çekilen bilgiler ile eleman_ekleme_basarili sayfası yüklendi 
-				$this->load->view('arge/eleman/eleman_ekleme_basarili');
+						$this->load->view('arge/eleman/eleman_ekleme_basarili', $eleman_ekle_basarili_verileri);
+					} else {
+						// Hata sayfası yapılacak
+						echo 'interval server error';
+					}
 			}
-
-
 		}
 	}
 /* End of the file: eleman.php */

@@ -88,8 +88,37 @@
 									'numune'=>$gelen_bilgi['numune']
 									);
 
-			$this->db->insert('eleman', $eklenecek_veri);
+			if($this->db->insert('eleman', $eklenecek_veri)) {
+				return true;
+			}
 			
+		}
+		/**
+		 * Dropdown menüden girilen bilgiler, eleman_ekle_başarılı_sayfası için tekrar çekildi
+		 * 
+		 */
+		public function firmaid_ismi($firma_id)
+		{
+			$this->db->select('firma_ismi');
+			$this->db->where('firma_id', $firma_id);
+			$query = $this->db->get('firma');
+			return $query->result_array()[0]['firma_ismi'];
+		}
+
+		public function elemanid_turu($eleman_turu_id)
+		{
+			$this->db->select('eleman_turu');
+			$this->db->where('id', $eleman_turu_id);
+			$query = $this->db->get('eleman_turu');
+			return $query->result_array()[0]['eleman_turu'];
+		}
+
+		public function kilifid_turu($kilif_turu_id)
+		{
+			$this->db->select('kilif_tipi');
+			$this->db->where('id', $kilif_turu_id);
+			$query = $this->db->get('kilif');
+			return $query->result_array()[0]['kilif_tipi'];
 		}
 
 
