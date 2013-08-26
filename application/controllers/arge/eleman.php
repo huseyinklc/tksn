@@ -4,6 +4,7 @@
 		public $eleman_turu;
 		public $firma_ismi;
 		public $kilif_tipi;
+		public $veri = array();
 
 		public function __construct()
 		{
@@ -21,6 +22,17 @@
 
 			// Kılıf Tipleri dropdown liste eklenebilmesi için databaseden çekildi
 			$this->kilif_tipi = $this->eleman_model->kilif_tipi();
+
+
+			// Databaseden çekilen eleman türleri eleman_ekle sayfasına yollanabilmek için veri arrayi içine atıldı
+			$this->veri['eleman_turu'] = $this->eleman_turu;
+
+			// Databaseden firma isimleri çekildi..
+			$this->veri['firma_ismi'] = $this->firma_ismi;
+
+
+			// Databaseden kilif tipleri çekildi..
+			$this->veri['kilif_tipi'] = $this->kilif_tipi;
 		}
 
 		public function index(){
@@ -32,19 +44,11 @@
 			// Eleman ekle sayfasındaki form işlemleri için form helperi yüklendi
 			$this->load->helper('form');
 
-			// Databaseden çekilen eleman türleri eleman_ekle sayfasına yollanabilmek için veri arrayi içine atıldı
-			$veri['eleman_turu'] = $this->eleman_turu;
-
-			// Databaseden firma isimleri çekildi..
-			$veri['firma_ismi'] = $this->firma_ismi;
-
-			// Databaseden kilif tipleri çekildi..
-			$veri['kilif_tipi'] = $this->kilif_tipi;
-
-			$veri['form_hatalari'] = '';
+			
+			$this->veri['form_hatalari'] = '';
 
 			// eleman ekle sayfası veri arrayi ile yüklendi
-			$this->load->view('arge/eleman/eleman_ekle', $veri);
+			$this->load->view('arge/eleman/eleman_ekle', $this->veri);
 		}
 
 		public function eleman_ekle_kontrol()
@@ -64,19 +68,11 @@
 				// Eleman ekle sayfasındaki form işlemleri için form helperi yüklendi
 				$this->load->helper('form');
 		
-				// Databaseden çekilen eleman türleri eleman_ekle sayfasına yollanabilmek için veri arrayi içine atıldı
-				$veri['eleman_turu'] = $this->eleman_turu;
-
-				// Databaseden firma isimleri çekildi..
-				$veri['firma_ismi'] = $this->firma_ismi;
-
-				// Databaseden kilif tipleri çekildi..
-				$veri['kilif_tipi'] = $this->kilif_tipi;
 					
 				// hatalar form_hatalari değişkenine yüklendi
-				$veri['form_hatalari'] =  validation_errors();
+				$this->veri['form_hatalari'] =  validation_errors();
 
-				$this->load->view('arge/eleman/eleman_ekle', $veri);
+				$this->load->view('arge/eleman/eleman_ekle', $this->veri);
 
 			} else {
 
