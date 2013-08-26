@@ -35,16 +35,17 @@
 		<!-- Resim yükleme gelecek -->
 		<p>
 			<?php
-				echo form_label('Kılıf Tipi: ', 'kilif_id'); 
+				echo form_label('Kılıf Tipi: ', 'kilif_id');
 				echo form_dropdown('kilif_id', $kilif_tipi);
 			?>	
 		</p> 
 		<p>
 			<?php
 				echo form_label('Elaman Özellikleri: ', 'ozellik');
+				echo '</p>';
 				$ozellik = set_value('ozellik'); 
-				$eleman_ozellik_ozellikleri = array('name'=>'ozellik', 'id'=>'ozellik', 'maxlenght'=>'1000', 'value'=>$ozellik);
-				echo form_input($eleman_ozellik_ozellikleri);
+				$eleman_ozellik_ozellikleri = array('name'=>'ozellik', 'id'=>'ozellik', 'maxlenght'=>'1000','cols'=>'40', 'rows'=>'20', 'value'=>$ozellik);
+				echo form_textarea($eleman_ozellik_ozellikleri);
 			?>	
 		</p>
 		<!-- Eleman döküman yükleme gelecek -->
