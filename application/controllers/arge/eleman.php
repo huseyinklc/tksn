@@ -68,10 +68,6 @@
 
 			if($this->form_validation->run() == FALSE) {
 				// eğer formda hata varsa 
-			
-
-
-		
 					
 				// hatalar form_hatalari değişkenine yüklendi
 				$this->veri['form_hatalari'] =  validation_errors();
@@ -127,7 +123,38 @@
 		 */
 		public function eleman_turu_ekle_kontrol()
 		{
+			// Eleman türü için kontrol edilecek kuralları yazdık..
+			$this->form_validation->set_rules('eleman_turu', 'Eleman Türü', 'trim|required|min_length[2]|max_length[50]|xss_clean');
+
+			// Kontrolü yapıyoruz
+			if($this->form_validation->run() == FALSE) {
+				// eğer formda hata varsa 	
 			
+				// hatalar form_hatalari değişkenine yüklendi
+				$this->veri['form_hatalari'] =  validation_errors();
+				$this->load->view('arge/eleman/eleman_ekle', $this->veri);
+
+			} else {
+					// Herşey yolunda ise;
+
+					// Formdan gelen bilgiler array içine yazıldı
+					$formdan_gelen_bilgiler['eleman_turu'] = $this->input->post('eleman_turu');
+
+
+					// Formdan gelen bilgiler database yazılmaya çalışıldı
+					if($this->eleman_model->eleman_turu_bilgilerini_database_yaz($formdan_gelen_bilgiler)) {
+
+						// Eğer başarılı ise eklenen eleman türü ek ekranda tekrar bastırıldı.
+						$eleman_turu_ekle_basarili_verileri['eleman_turu'] = $formdan_gelen_bilgiler['eleman_turu'];
+					
+
+						$this->load->view('arge/eleman/eleman_turu_ekleme_basarili', $eleman_turu_ekle_basarili_verileri);
+					} else {
+						// Hata sayfası yapılacak
+						echo 'interval server error';
+					}
+			}
+
 		}
 
 
