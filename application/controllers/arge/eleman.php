@@ -148,7 +148,7 @@
 						$eleman_turu_ekle_basarili_verileri['eleman_turu'] = $formdan_gelen_bilgiler['eleman_turu'];
 					
 
-						$this->load->view('arge/eleman/eleman_turu_ekleme_basarili', $eleman_turu_ekle_basarili_verileri);
+						$this->load->view('arge/eleman/eleman_turu_ekle_basarili', $eleman_turu_ekle_basarili_verileri);
 					} else {
 						// Hata sayfası yapılacak
 						echo 'interval server error';

@@ -128,7 +128,6 @@
 		 */
 		public function eleman_turu_bilgilerini_database_yaz($eleman_turu)
 		{
-			echo $eleman_turu;
 			$this->db->set('eleman_turu', $eleman_turu);
 			if($this->db->insert('eleman_turu')) {
 				return true;
