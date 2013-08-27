@@ -14,6 +14,9 @@
 			// Form işlemleri için form helperi yüklendi
 			$this->load->helper('form');
 
+			// form kontrolü için 
+			$this->load->library('form_validation');
+
 			// database işlemleri için model yüklendi
 			$this->load->model('arge/eleman_model');
 
@@ -56,8 +59,7 @@
 
 		public function eleman_ekle_kontrol()
 		{
-			// form kontrolü için 
-			$this->load->library('form_validation');
+
 
 
 			$this->form_validation->set_rules('eleman_kodu', 'Eleman Kodu', 'trim|required|min_length[2]|max_length[50]|xss_clean');
