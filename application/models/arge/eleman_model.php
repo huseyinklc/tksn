@@ -133,6 +133,23 @@
 				return true;
 			}
 		}
+
+		/**
+		 * Formdan gelen bilgiyi database içerisine yazmaya çalışıyoruz
+		 * 
+		 * @return boolean Sorgu başarılı bir şekilde database içerisine yazılmışsa true döndürüyor
+		 */
+		public function firma_bilgilerini_database_yaz($firma_bilgileri)
+		{
+			$eklenecek_veri = array(
+									'firma_ismi'=>$firma_bilgileri['firma_ismi'], 'tel'=>$firma_bilgileri['tel'],
+									'mail'=>$firma_bilgileri['mail'], 'adres'=>$firma_bilgileri['adres']
+									);
+
+			if($this->db->insert('firma', $eklenecek_veri)) {
+				return true;
+			}
+		}
 	}
 /* End of the file: eleman_model.php */
 /* Location: ./application/models/arge/ */

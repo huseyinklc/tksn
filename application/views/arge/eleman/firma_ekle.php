@@ -17,7 +17,8 @@
 		<p>
 			<?php
 				echo form_label('Firma Ismi: ', 'firma_ismi');
-				$firma_ismi_ozellikleri = array('name'=>'firma_ismi', 'id'=>'firma_ismi', 'maxlenght'=>'70');
+				$firma_ismi = set_value('firma_ismi');
+				$firma_ismi_ozellikleri = array('name'=>'firma_ismi', 'id'=>'firma_ismi', 'maxlenght'=>'70', 'value'=>$firma_ismi);
 				echo form_input($firma_ismi_ozellikleri);
 			?>	
 		</p>
@@ -25,7 +26,8 @@
 		<p>
 			<?php
 				echo form_label('Firma Telefonu: ', 'tel');
-				$tel_ozellikleri = array('name'=>'tel', 'id'=>'tel', 'maxlenght'=>'70');
+				$tel = set_value('tel');
+				$tel_ozellikleri = array('name'=>'tel', 'id'=>'tel', 'maxlenght'=>'70', 'value'=>$tel);
 				echo form_input($tel_ozellikleri);
 			?>	
 		</p>
@@ -33,7 +35,8 @@
 		<p>
 			<?php
 				echo form_label('Firma Mail Adresi: ', 'mail');
-				$mail_ozellikleri = array('name'=>'mail', 'id'=>'mail', 'maxlenght'=>'70');
+				$mail = set_value('mail');
+				$mail_ozellikleri = array('name'=>'mail', 'id'=>'mail', 'maxlenght'=>'70', 'value'=>$mail);
 				echo form_input($mail_ozellikleri);
 			?>	
 		</p>
@@ -42,7 +45,8 @@
 			<?php
 				echo form_label('Firma Adresi: ', 'adres');
 				echo '</p>';
-				$adres_ozellikleri = array('name'=>'adres', 'id'=>'adres', 'maxlenght'=>'5000', 'rows'=>'20', 'cols'=>'30');
+				$adres = set_value('adres');
+				$adres_ozellikleri = array('name'=>'adres', 'id'=>'adres', 'maxlenght'=>'5000', 'rows'=>'20', 'cols'=>'30', 'value'=>$adres);
 				echo form_textarea($adres_ozellikleri);
 			?>	
 		<!-- Form submit edilir ve kapatılır -->
