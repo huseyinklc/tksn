@@ -157,6 +157,19 @@
 
 		}
 
+		/**
+		 * Databasedeki firmalar yeterli gelmediğinde yeni firma eklemek için
+		 *
+		 */
+		public function firma_ekle()
+		{
+			// boş form hataları yüklemek için
+			$veri['form_hatalari'] = '';
+
+			// firma hataları sayfasını yükledik
+ 			$this->load->view('arge/eleman/firma_ekle', $veri);
+		}
+
 
 	}
 /* End of the file: eleman.php */
