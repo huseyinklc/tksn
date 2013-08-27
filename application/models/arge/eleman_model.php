@@ -121,6 +121,17 @@
 			return $query->result_array()[0]['kilif_tipi'];
 		}
 
+		/**
+		 * Formdan gelen bilgiyi database içerisine yazmaya çalışıyoruz
+		 * 
+		 * @return boolean Sorgu başarılı bir şekilde database içerisine yazılmışsa true döndürüyor
+		 */
+		public function eleman_turu_bilgilerini_database_yaz($eleman_turu)
+		{
+			$this->db->set('eleman_turu', $eleman_turu);
+			$this->db->insert('eleman_turu');
+		}
+
 
 	}
 /* End of the file: eleman_model.php */

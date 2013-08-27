@@ -142,7 +142,7 @@
 
 
 					// Formdan gelen bilgiler database yazılmaya çalışıldı
-					if($this->eleman_model->eleman_turu_bilgilerini_database_yaz($formdan_gelen_bilgiler)) {
+					if($this->eleman_model->eleman_turu_bilgilerini_database_yaz($formdan_gelen_bilgiler['eleman_turu'])) {
 
 						// Eğer başarılı ise eklenen eleman türü ek ekranda tekrar bastırıldı.
 						$eleman_turu_ekle_basarili_verileri['eleman_turu'] = $formdan_gelen_bilgiler['eleman_turu'];
