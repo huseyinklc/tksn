@@ -11,6 +11,9 @@
 			// Framework parent constuructor çağırıldı..
 			parent::__construct();
 
+			// Form işlemleri için form helperi yüklendi
+			$this->load->helper('form');
+
 			// database işlemleri için model yüklendi
 			$this->load->model('arge/eleman_model');
 
@@ -65,8 +68,7 @@
 				// eğer formda hata varsa 
 			
 
-				// Eleman ekle sayfasındaki form işlemleri için form helperi yüklendi
-				$this->load->helper('form');
+
 		
 					
 				// hatalar form_hatalari değişkenine yüklendi
@@ -104,6 +106,29 @@
 					}
 			}
 		}
+
+		/*
+		* Database'de bulunan elemanlar yeterli gelmediğinde eleman türü eklemek için
+		*/
+
+		public function eleman_turu_ekle()
+		{
+			// ilk yüklemede form hatası olmadığı için boş yolluyoruz
+			$veri['form_hatalari'] = '';
+
+			// eleman_turu_ekle sayfamizi yükledik
+			$this->load->view('arge/eleman/eleman_turu_ekle',$veri);
+		}
+
+		/**
+		 * Eklediğimi eleman turunu konrol edip databe yazacaz..
+		 */
+		public function eleman_turu_ekle_kontrol()
+		{
+			
+		}
+
+
 	}
 /* End of the file: eleman.php */
 /* Location: ./application/controllers/arge/eleman/ */
