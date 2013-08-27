@@ -204,6 +204,56 @@
 			}
 		}
 
+		/*
+		* Database'de bulunan kilif çeşiti yeterli gelmediğinde kilif tipi eklemek için
+		*/
+
+		public function kilif_ekle()
+		{
+			// ilk yüklemede form hatası olmadığı için boş yolluyoruz
+			$veri['form_hatalari'] = '';
+
+			// kilif_ekle sayfamizi yükledik
+			$this->load->view('arge/eleman/kilif_ekle',$veri);
+		}
+
+		/**
+		 * Eklediğimiz kilif turunu konrol edip databe yazacaz..
+		 */
+		public function kilif_ekle_kontrol()
+		{
+			// Eleman türü için kontrol edilecek kuralları yazdık..
+			$this->form_validation->set_rules('kilif_tipi', 'Kılıf Tipi', 'trim|required|min_length[2]|max_length[30]|xss_clean');
+
+			// Kontrolü yapıyoruz
+			if($this->form_validation->run() == FALSE) {
+				// eğer formda hata varsa 	
+			
+				// hatalar form_hatalari değişkenine yüklendi
+				$this->veri['form_hatalari'] =  validation_errors();
+				$this->load->view('arge/eleman/kilif_ekle', $this->veri);
+
+			} else {
+					// Herşey yolunda ise;
+
+					// Formdan gelen bilgiler array içine yazıldı
+					$formdan_gelen_bilgiler['kilif_tipi'] = $this->input->post('kilif_tipi');
+
+
+					// Formdan gelen bilgiler database yazılmaya çalışıldı
+					if($this->eleman_model->kilif_bilgilerini_database_yaz($formdan_gelen_bilgiler['kilif_tipi'])) {
+						
+						// Database içerisine başarılı bir şekilde yazdırıldıysa
+						$this->load->view('arge/eleman/kilif_ekle_basarili', $formdan_gelen_bilgiler);
+
+					} else {
+						// Hata sayfası yapılacak
+						echo 'interval server error';
+					}
+			}
+
+		}
+
 
 	}
 /* End of the file: eleman.php */
