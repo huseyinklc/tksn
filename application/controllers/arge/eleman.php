@@ -251,7 +251,10 @@
 						echo 'interval server error';
 					}
 			}
+		}
 
+		public function tum_elemanlari_goster(){
+			print_r($this->eleman_model->tum_eleman_bilgilerini_cek()) ;
 		}
 
 

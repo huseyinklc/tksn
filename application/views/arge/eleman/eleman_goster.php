@@ -12,7 +12,7 @@
 	        <th>Eleman Türü</th><th>Kılıf</th>
 	        <th>Adet</th><th>Numune</th>
 	        <th>Detay</th><th>Değiştir</th>
-	        <th>Adet</th></tr>
+	        <th>Sil</th></tr>
 	    </thead>
 	    <tbody WIDTH="100%">
 	        <tr><td>Hücre 1-1</td><td>Hücre 1-2</td>

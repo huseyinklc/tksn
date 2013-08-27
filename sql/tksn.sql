@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 26, 2013 at 03:47 ÖS
+-- Generation Time: Aug 27, 2013 at 03:53 ÖS
 -- Server version: 5.5.31
 -- PHP Version: 5.4.16
 
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `eleman` (
   `adet` int(10) NOT NULL,
   `numune` tinyint(1) NOT NULL,
   PRIMARY KEY (`eleman_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=32 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=33 ;
 
 --
 -- Dumping data for table `eleman`
@@ -74,7 +74,8 @@ INSERT INTO `eleman` (`eleman_id`, `eleman_kodu`, `firma_id`, `eleman_turu_id`, 
 (28, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
 (29, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
 (30, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
-(31, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1);
+(31, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
+(32, 13, 4, 6, '', 3, 'Çok fazla özellik anlatsam inanmazsın..', '', 100, 0);
 
 -- --------------------------------------------------------
 
@@ -86,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `eleman_turu` (
   `id` tinyint(3) NOT NULL AUTO_INCREMENT,
   `eleman_turu` varchar(30) COLLATE utf8_turkish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `eleman_turu`
@@ -102,7 +103,11 @@ INSERT INTO `eleman_turu` (`id`, `eleman_turu`) VALUES
 (7, 'Sensör'),
 (8, 'Kristal'),
 (9, 'Regülatör'),
-(10, 'OP-AMP');
+(10, 'OP-AMP'),
+(11, 'Hüseyin'),
+(12, 'Hüseyin'),
+(13, 'Hüseyin'),
+(14, 'Hüseyin');
 
 -- --------------------------------------------------------
 
@@ -117,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `firma` (
   `mail` varchar(50) COLLATE utf8_turkish_ci NOT NULL,
   `adres` varchar(300) COLLATE utf8_turkish_ci NOT NULL,
   PRIMARY KEY (`firma_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `firma`
@@ -126,7 +131,9 @@ CREATE TABLE IF NOT EXISTS `firma` (
 INSERT INTO `firma` (`firma_id`, `firma_ismi`, `tel`, `mail`, `adres`) VALUES
 (1, 'Mikrodizayn ', '0 216 335 03', 'bilgi@mikrodizayn.com.tr ', 'E5 Kuzey Yanyol Üzeri,Memleket Sokak, No: 3, Kat: 2-3-4, 34852, Zümrütevler/ Maltepe - İstanbul'),
 (2, 'Future Electronics', '+90 216 5719', 'e_services@FutureElectronics.com', 'Sehit Mehmet Faith Ongul Sok No 3\r\nBagdatlioglu Plaza Kat 9\r\n\r\nIstanbul\r\nKozyatagi - Kadikoy'),
-(3, 'Arrow Elektronik', '90 216 680 4', '', 'Yeni Sk. VIP Plaza, No:5 Kat:1\r\nKavacik, Beykoz 34810 Istanbul/Turkey');
+(3, 'Arrow Elektronik', '90 216 680 4', '', 'Yeni Sk. VIP Plaza, No:5 Kat:1\r\nKavacik, Beykoz 34810 Istanbul/Turkey'),
+(4, 'huseyinin yeri', '9000500', 'sad@gmail.com', 'dlasdasdas'),
+(5, 'huseyinin yeri', '9000500', 'sad@gmail.com', 'dlasdasdas');
 
 -- --------------------------------------------------------
 
@@ -138,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `kilif` (
   `id` smallint(3) NOT NULL AUTO_INCREMENT,
   `kilif_tipi` varchar(30) COLLATE utf8_turkish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `kilif`
@@ -146,7 +153,8 @@ CREATE TABLE IF NOT EXISTS `kilif` (
 
 INSERT INTO `kilif` (`id`, `kilif_tipi`) VALUES
 (1, 'SMD'),
-(2, 'SOID');
+(2, 'SOID'),
+(3, 'huseyin');
 
 -- --------------------------------------------------------
 
@@ -170,6 +178,25 @@ INSERT INTO `kullanicilar` (`user_id`, `kullanici_adi`, `sifre`, `uyelik_turu`) 
 (1, 'root', 12345, 1),
 (2, 'arge', 12345, 2),
 (3, 'depo', 12345, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `numune`
+--
+
+CREATE TABLE IF NOT EXISTS `numune` (
+  `numune` tinyint(1) NOT NULL,
+  `numune_mi` varchar(5) COLLATE utf8_turkish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Dumping data for table `numune`
+--
+
+INSERT INTO `numune` (`numune`, `numune_mi`) VALUES
+(0, 'Hayır'),
+(1, 'Evet');
 
 -- --------------------------------------------------------
 
