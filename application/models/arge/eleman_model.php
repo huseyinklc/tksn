@@ -150,6 +150,19 @@
 				return true;
 			}
 		}
+
+		/**
+		 * Formdan gelen bilgiyi database içerisine yazmaya çalışıyoruz
+		 * 
+		 * @return boolean Sorgu başarılı bir şekilde database içerisine yazılmışsa true döndürüyor
+		 */
+		public function kilif_bilgilerini_database_yaz($kilif)
+		{
+			$this->db->set('kilif_tipi', $kilif);
+			if($this->db->insert('kilif')) {
+				return true;
+			}
+		}
 	}
 /* End of the file: eleman_model.php */
 /* Location: ./application/models/arge/ */
