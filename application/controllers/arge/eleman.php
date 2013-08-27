@@ -132,7 +132,7 @@
 			
 				// hatalar form_hatalari değişkenine yüklendi
 				$this->veri['form_hatalari'] =  validation_errors();
-				$this->load->view('arge/eleman/eleman_ekle', $this->veri);
+				$this->load->view('arge/eleman/eleman_turu_ekle', $this->veri);
 
 			} else {
 					// Herşey yolunda ise;
