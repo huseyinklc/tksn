@@ -43,8 +43,14 @@
 
 		public function index(){
 
-			$veri['tum_bilgiler'] =	$this->eleman_model->tum_eleman_bilgilerini_cek();
+			$veri['tum_bilgiler'] =	$this->eleman_model->eleman_bilgilerini_goster();
 			$this->load->view('arge/eleman/eleman_goster', $veri);
+		}
+
+		public function eleman_detay($eleman_id)
+		{
+			$veri['tum_ayrinti_bilgiler'] = $this->eleman_model->tum_eleman_bilgilerini_goster($eleman_id);
+			$this->load->view('arge/eleman/eleman_detay', $veri);
 		}
 
 		public function eleman_ekle()

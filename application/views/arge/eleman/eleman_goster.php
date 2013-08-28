@@ -23,7 +23,7 @@
 				echo '<td>' .$tum_bilgiler->kilif_tipi . '</td>';
 				echo '<td>' . $tum_bilgiler->adet . '</td>';
 				echo '<td>' .$tum_bilgiler->numune_mi . '</td>';
-				echo '<td>' . 'detay' .'</td>';
+				echo '<td>' . '<a href="eleman/eleman_detay/' .$tum_bilgiler->eleman_id  .'" >Detay </a>' .'</td>';
 				echo '<td>' . 'değiştir' .'</td>';
 				echo '<td>' . 'sil' .'</td>';
 				}
