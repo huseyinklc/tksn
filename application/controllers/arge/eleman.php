@@ -42,7 +42,9 @@
 		}
 
 		public function index(){
-			$this->load->view('arge/eleman/eleman_goster');
+
+			$veri['tum_bilgiler'] =	$this->eleman_model->tum_eleman_bilgilerini_cek();
+			$this->load->view('arge/eleman/eleman_goster', $veri);
 		}
 
 		public function eleman_ekle()
@@ -252,12 +254,6 @@
 					}
 			}
 		}
-
-		public function tum_elemanlari_goster(){
-			print_r($this->eleman_model->tum_eleman_bilgilerini_cek()) ;
-		}
-
-
 	}
 /* End of the file: eleman.php */
 /* Location: ./application/controllers/arge/eleman/ */

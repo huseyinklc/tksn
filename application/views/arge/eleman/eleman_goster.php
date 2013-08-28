@@ -15,13 +15,23 @@
 	        <th>Sil</th></tr>
 	    </thead>
 	    <tbody WIDTH="100%">
-	        <tr><td>Hücre 1-1</td><td>Hücre 1-2</td>
-	        <td>Hücre 2-1</td><td>Hücre 2-2</td>
-	        <td>Hücre 1-1</td><td>Hücre 1-1</td>
-	    	<td>Hücre 1-1</td><td>Hücre 1-1</td>
-			<td>Hücre 1-1</td></tr>
+	    	<?php 
+				foreach ($tum_bilgiler as $tum_bilgiler) {
+				echo '<tr><td>' . $tum_bilgiler->firma_ismi . '</td>';
+				echo '<td>' .$tum_bilgiler->eleman_kodu . '</td>';
+				echo '<td>' . $tum_bilgiler->eleman_turu . '</td>';
+				echo '<td>' .$tum_bilgiler->kilif_tipi . '</td>';
+				echo '<td>' . $tum_bilgiler->adet . '</td>';
+				echo '<td>' .$tum_bilgiler->numune_mi . '</td>';
+				echo '<td>' . 'detay' .'</td>';
+				echo '<td>' . 'değiştir' .'</td>';
+				echo '<td>' . 'sil' .'</td>';
+				}
+
+			?>
 	    </tbody>
 	</table>
+
 	
 		
 	</body>
