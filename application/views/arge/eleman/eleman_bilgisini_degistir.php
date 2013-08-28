@@ -11,7 +11,7 @@
 		<?php echo $form_hatalari; ?>
 
 		<!-- Dosya upload için multipart açıldı ama dosya yükleme kısmı başka türlü yapılacak!!!  -->
-		<?php echo form_open_multipart('arge/eleman/eleman_bilgisini_degistir_kontrol') ?>
+		<?php echo form_open_multipart('arge/eleman/eleman_bilgisini_degistir_kontrol/' . $eleman_bilgiler[0]->eleman_id) ?>
 
 		<p>
 			<?php
