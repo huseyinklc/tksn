@@ -202,6 +202,11 @@
  			}	
 		}
 
+		public function eleman_sil($eleman_id){
+			
+			return	$this->db->delete('eleman', array('eleman_id' => $eleman_id));
+		}
+
 		public function tum_eleman_bilgilerini_goster($eleman_id)
 		{
 			$this->db->select('eleman_id,firma_ismi, eleman_kodu, eleman_turu, kilif_tipi, adet, numune_mi, ozellik');

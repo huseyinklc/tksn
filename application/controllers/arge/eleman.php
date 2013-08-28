@@ -139,10 +139,6 @@
 			}
 		}
 
-
-
-
-
 		public function eleman_ekle()
 		{
 			
@@ -200,10 +196,30 @@
 			}
 		}
 
+
+		public function eleman_sil($eleman_id)
+		{
+			//sileceğimiz elemanı detaylı görmek istediğimiz elemanın bilgilerini eleman_id ile çekiyoruz
+			$veri['tum_ayrinti_bilgiler'] = $this->eleman_model->tum_eleman_bilgilerini_goster($eleman_id);
+
+			$this->load->view('arge/eleman/eleman_sil', $veri);
+		}
+		public function eleman_sil_onay($eleman_id)
+		{
+			if($this->eleman_model->eleman_sil($eleman_id)) {
+				echo '<h2>Eleman silme işlemi başarılı</h2>';
+				$this->output->set_header('refresh:5;url=../../eleman'); 
+			} else {
+				echo 'interval server error';
+			}
+		}
+
+
+
+
 		/*
 		* Database'de bulunan elemanlar yeterli gelmediğinde eleman türü eklemek için
 		*/
-
 		public function eleman_turu_ekle()
 		{
 			// ilk yüklemede form hatası olmadığı için boş yolluyoruz
