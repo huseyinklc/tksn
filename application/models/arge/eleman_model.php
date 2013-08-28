@@ -185,6 +185,23 @@
 			return $query->result();
 		}
 
+		public function eleman_bilgilerini_degistir($eleman_bilgileri)
+		{
+
+			$eklenecek_veri = array(
+									'eleman_kodu'=>$eleman_bilgileri['eleman_kodu'], 'firma_id'=>$eleman_bilgileri['firma_id'],
+									'eleman_turu_id'=>$eleman_bilgileri['eleman_turu_id'], 'kilif_id'=>$eleman_bilgileri['kilif_id'],
+									'ozellik'=>$eleman_bilgileri['ozellik'], 'adet'=>$eleman_bilgileri['adet'],
+									'numune'=>$eleman_bilgileri['numune']
+									);
+
+			$this->db->where('eleman_id', $eleman_bilgileri['eleman_id']);
+ 			
+ 			if($this->db->update('eleman', $eklenecek_veri)) {
+ 				return true;
+ 			}	
+		}
+
 		public function tum_eleman_bilgilerini_goster($eleman_id)
 		{
 			$this->db->select('eleman_id,firma_ismi, eleman_kodu, eleman_turu, kilif_tipi, adet, numune_mi, ozellik');
