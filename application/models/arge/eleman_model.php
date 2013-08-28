@@ -178,6 +178,13 @@
 			return $query->result();
 		}
 
+		public function degistirilecek_eleman_bilgilerini_goster($eleman_id)
+		{
+			$this->db->where('eleman_id', $eleman_id);
+			$query = $this->db->get('eleman');
+			return $query->result();
+		}
+
 		public function tum_eleman_bilgilerini_goster($eleman_id)
 		{
 			$this->db->select('eleman_id,firma_ismi, eleman_kodu, eleman_turu, kilif_tipi, adet, numune_mi, ozellik');
