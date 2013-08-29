@@ -235,12 +235,13 @@
 
 		public function tum_eleman_bilgilerini_goster($eleman_id)
 		{
-			$this->db->select('eleman_id,firma_ismi, eleman_kodu, eleman_turu, kilif_tipi, adet, numune_mi, ozellik');
+			$this->db->select('eleman_id,firma_ismi, eleman_kodu, eleman_turu, kilif_tipi, arge_adet, depo_adet, numune_mi, eleman_saklama_durumu, ozellik');
 			$this->db->from('eleman');
 			$this->db->join('firma', 'eleman.firma_id = firma.firma_id');
 			$this->db->join('eleman_turu', 'eleman.eleman_turu_id = eleman_turu.id');
 			$this->db->join('kilif', 'eleman.kilif_id = kilif.id');
 			$this->db->join('numune', 'eleman.numune = numune.numune');
+			$this->db->join('eleman_saklama_durumu', 'eleman.eleman_saklama_durumu_id = eleman_saklama_durumu.eleman_saklama_durumu_id');
 			$this->db->where('eleman_id', $eleman_id);
 
 

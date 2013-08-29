@@ -12,7 +12,9 @@
 					echo '<strong>Eleman Kodu: </strong>' . $bilgi->eleman_kodu . '<br />';
 					echo '<strong>Eleman Türü: </strong>' . $bilgi->eleman_turu . '<br />';
 					echo '<strong>Kilif: </strong>' . $bilgi->kilif_tipi . '<br />';
-					echo '<strong>Adet: </strong>' . $bilgi->adet . '<br />';
+					echo '<strong>Arge Adet: </strong>' . $bilgi->arge_adet . '<br />';
+					echo '<strong>Depo Adet: </strong>' . $bilgi->depo_adet . '<br />';
+					echo '<strong>Nerde: </strong>' . $bilgi->eleman_saklama_durumu . '<br />';
 					echo '<strong>Numune :</strong>' . $bilgi->numune_mi . '<br />';
 					echo '<strong>Özellikleri: </strong>' . $bilgi->ozellik . '<br />';
 					echo ' eleman dökümanları linki gelecek' . '<br />';
