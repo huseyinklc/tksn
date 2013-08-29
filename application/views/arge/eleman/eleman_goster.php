@@ -26,9 +26,9 @@
 				echo '<td>' . $tum_bilgiler->depo_adet . '</td>';
 				echo '<td>' . $tum_bilgiler->eleman_saklama_durumu . '</td>';
 				echo '<td>' .$tum_bilgiler->numune_mi . '</td>';
-				echo '<td>' . '<a href="eleman/eleman_detay/' .$tum_bilgiler->eleman_id  .'" >Detay </a>' .'</td>';
-				echo '<td>' . '<a href="eleman/eleman_bilgisini_degistir/' .$tum_bilgiler->eleman_id  .'" >Değiştir </a>' .'</td>';
-				echo '<td>' . '<a href="eleman/eleman_sil/' .$tum_bilgiler->eleman_id  .'" >Sil </a>' .'</td>';
+				echo '<td>' . '<a href="eleman_detay/' .$tum_bilgiler->eleman_id  .'" >Detay </a>' .'</td>';
+				echo '<td>' . '<a href="eleman_bilgisini_degistir/' .$tum_bilgiler->eleman_id  .'" >Değiştir </a>' .'</td>';
+				echo '<td>' . '<a href="eleman_sil/' .$tum_bilgiler->eleman_id  .'" >Sil </a>' .'</td>';
 				}
 
 			?>
