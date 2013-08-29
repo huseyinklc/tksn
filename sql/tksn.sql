@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 29, 2013 at 10:47 ÖÖ
+-- Generation Time: Aug 29, 2013 at 10:51 ÖÖ
 -- Server version: 5.5.31
 -- PHP Version: 5.4.16
 
@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS `adet` (
   `adet_id` smallint(5) NOT NULL AUTO_INCREMENT,
   `depo_adet` int(8) NOT NULL,
   `arge_adet` int(8) NOT NULL,
+  `eleman_saklama_durumu_id` smallint(2) NOT NULL,
   PRIMARY KEY (`adet_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=1 ;
 
