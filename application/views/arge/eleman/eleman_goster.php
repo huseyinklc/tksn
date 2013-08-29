@@ -10,7 +10,8 @@
 	    <thead WIDTH="100%">
 	        <tr><th>Firma İsmi</th><th>Eleman Kodu</th>
 	        <th>Eleman Türü</th><th>Kılıf</th>
-	        <th>Adet</th><th>Numune</th>
+	        <th>Arge Adet</th><th>Depo Adet</th>
+	        <th>Eleman Saklama Durumu</th><th>Numune</th>
 	        <th>Detay</th><th>Değiştir</th>
 	        <th>Sil</th></tr>
 	    </thead>
@@ -22,6 +23,8 @@
 				echo '<td>' . $tum_bilgiler->eleman_turu . '</td>';
 				echo '<td>' .$tum_bilgiler->kilif_tipi . '</td>';
 				echo '<td>' . $tum_bilgiler->arge_adet . '</td>';
+				echo '<td>' . $tum_bilgiler->depo_adet . '</td>';
+				echo '<td>' . $tum_bilgiler->eleman_saklama_durumu . '</td>';
 				echo '<td>' .$tum_bilgiler->numune_mi . '</td>';
 				echo '<td>' . '<a href="eleman/eleman_detay/' .$tum_bilgiler->eleman_id  .'" >Detay </a>' .'</td>';
 				echo '<td>' . '<a href="eleman/eleman_bilgisini_degistir/' .$tum_bilgiler->eleman_id  .'" >Değiştir </a>' .'</td>';
