@@ -181,9 +181,9 @@
 						// Eğer başarılı ise, database yazılan değerler ve dropdown'daki listeler databaseden çekilerek 
 						// ekrana yazdırılır
 						$eleman_ekle_basarili_verileri['eleman_kodu'] = $formdan_gelen_bilgiler['eleman_kodu'];
-						$eleman_ekle_basarili_verileri['firma_ismi'] = $this->eleman_model->firmaid_ismi($formdan_gelen_bilgiler['firma_id']);
-						$eleman_ekle_basarili_verileri['eleman_turu'] = $this->eleman_model->elemanid_turu($formdan_gelen_bilgiler['eleman_turu_id']);
-						$eleman_ekle_basarili_verileri['kilif'] = $this->eleman_model->kilifid_turu($formdan_gelen_bilgiler['kilif_id']);
+						$eleman_ekle_basarili_verileri['firma_ismi'] = $this->veri['firma_ismi'][$formdan_gelen_bilgiler['firma_id']];
+						$eleman_ekle_basarili_verileri['eleman_turu'] = $this->veri['eleman_turu'][$formdan_gelen_bilgiler['eleman_turu_id']] ;
+						$eleman_ekle_basarili_verileri['kilif'] = $this->veri['kilif_tipi'][$formdan_gelen_bilgiler['kilif_id']] ; 
 						$eleman_ekle_basarili_verileri['ozellik'] = $formdan_gelen_bilgiler['ozellik'];
 						$eleman_ekle_basarili_verileri['adet'] = $formdan_gelen_bilgiler['adet'];
 						$eleman_ekle_basarili_verileri['numune'] = $formdan_gelen_bilgiler['numune']; 
