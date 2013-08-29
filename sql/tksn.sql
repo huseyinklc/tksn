@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 29, 2013 at 10:51 ÖÖ
+-- Generation Time: Aug 29, 2013 at 10:54 ÖÖ
 -- Server version: 5.5.31
 -- PHP Version: 5.4.16
 
@@ -88,6 +88,18 @@ INSERT INTO `eleman` (`eleman_id`, `eleman_kodu`, `firma_id`, `eleman_turu_id`, 
 (29, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
 (30, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
 (32, 13, 4, 6, '', 3, 'Çok fazla özellik anlatsam inanmazsın..', '', 500, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `eleman_saklama_durumu`
+--
+
+CREATE TABLE IF NOT EXISTS `eleman_saklama_durumu` (
+  `eleman_saklama_durumu_id` smallint(2) NOT NULL AUTO_INCREMENT,
+  `saklama_durumu` varchar(40) COLLATE utf8_turkish_ci NOT NULL,
+  PRIMARY KEY (`eleman_saklama_durumu_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
