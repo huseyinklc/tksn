@@ -225,6 +225,7 @@
 		public function eleman_sil_onay($eleman_id)
 		{
 			if($this->eleman_model->eleman_sil($eleman_id)) {
+				echo '<meta charset="utf-8">';
 				echo '<h2>Eleman silme işlemi başarılı</h2>';
 				$this->output->set_header('refresh:5;url=../../eleman'); 
 			} else {
