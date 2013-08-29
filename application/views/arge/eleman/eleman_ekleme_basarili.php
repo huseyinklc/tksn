@@ -12,7 +12,9 @@
 			<li><Strong>Eleman Türü: </Strong><?php echo $eleman_turu;  ?></li>
 			<li><Strong>Kılıf: </Strong><?php echo $kilif;  ?></li>
 			<li><Strong>Özellikleri: </Strong><?php echo $ozellik;  ?></li>
-			<li><Strong>Adeti: </Strong><?php echo $adet;  ?></li>
+			<li><Strong>Depo Adeti: </Strong><?php echo $depo_adet;  ?></li>
+			<li><Strong>Arge Adeti: </Strong><?php echo $arge_adet;  ?></li>
+			<li><Strong>Nereye: </Strong><?php echo $adet;  ?></li>
 			<li><Strong>Numune: </Strong><?php echo $numune;  ?></li>
 		</ul>
 

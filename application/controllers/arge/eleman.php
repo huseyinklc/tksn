@@ -29,6 +29,12 @@
 			// Kılıf Tipleri dropdown liste eklenebilmesi için databaseden çekildi
 			$this->kilif_tipi = $this->eleman_model->kilif_tipi();
 
+			// Dropdown lise için numune_ozellikleri kodu girdik..
+			$this->veri['numune_ozellikleri'] = array('0'=>'Hayır', '1'=>'Evet');
+
+			// Eleman saklama durumunu databaseden çekiyoruz
+			$this->veri['eleman_saklama_durumu'] = $this->eleman_model->eleman_saklama_durumu();
+			print_r($this->veri['eleman_saklama_durumu']);
 
 			// Databaseden çekilen eleman türleri eleman_ekle sayfasına yollanabilmek için veri arrayi içine atıldı
 			$this->veri['eleman_turu'] = $this->eleman_turu;
@@ -172,9 +178,20 @@
 					$formdan_gelen_bilgiler['firma_id'] = $this->input->post('firma_id');
 					$formdan_gelen_bilgiler['eleman_turu_id'] = $this->input->post('eleman_turu_id');
 					$formdan_gelen_bilgiler['kilif_id'] = $this->input->post('kilif_id');
-					$formdan_gelen_bilgiler['ozellik'] = $this->input->post('ozellik');
-					$formdan_gelen_bilgiler['adet'] = $this->input->post('adet');
+					$formdan_gelen_bilgiler['ozellik'] = $this->input->post('ozellik'); 
 					$formdan_gelen_bilgiler['numune'] = $this->input->post('numune');
+
+					// Numune durumuna göre elemanın nereye geldiğini buluyoruz..
+					if($formdan_gelen_bilgiler['numune'] === 0) {
+						$formdan_gelen_bilgiler['eleman_saklama_durumu_id'] = 0;
+						$formdan_gelen_bilgiler['arge_adet'] = 0;
+						$formdan_gelen_bilgiler['depo_adet'] = $this->input->post('adet');
+					} else {
+						$formdan_gelen_bilgiler['eleman_saklama_durumu_id'] = 1;
+						$formdan_gelen_bilgiler['arge_adet'] = $this->input->post('adet');
+						$formdan_gelen_bilgiler['depo_adet'] = 0;
+
+					}
 
 					// Formdan gelen bilgiler database yazılmaya çalışıldı
 					if($this->eleman_model->eleman_bilgilerini_database_yaz($formdan_gelen_bilgiler)) {
@@ -185,7 +202,9 @@
 						$eleman_ekle_basarili_verileri['eleman_turu'] = $this->veri['eleman_turu'][$formdan_gelen_bilgiler['eleman_turu_id']] ;
 						$eleman_ekle_basarili_verileri['kilif'] = $this->veri['kilif_tipi'][$formdan_gelen_bilgiler['kilif_id']] ; 
 						$eleman_ekle_basarili_verileri['ozellik'] = $formdan_gelen_bilgiler['ozellik'];
-						$eleman_ekle_basarili_verileri['adet'] = $formdan_gelen_bilgiler['adet'];
+						$eleman_ekle_basarili_verileri['eleman_saklama_durumu'] = 'daha sonra db den __construct ile çekilecek';
+						$eleman_ekle_basarili_verileri['arge_adet'] = $formdan_gelen_bilgiler['arge_adet'];
+						$eleman_ekle_basarili_verileri['depo_adet'] = $formdan_gelen_bilgiler['depo_adet'];
 						$eleman_ekle_basarili_verileri['numune'] = $formdan_gelen_bilgiler['numune']; 
 
 						$this->load->view('arge/eleman/eleman_ekleme_basarili', $eleman_ekle_basarili_verileri);

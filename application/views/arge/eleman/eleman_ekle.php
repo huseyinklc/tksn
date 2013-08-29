@@ -31,14 +31,13 @@
 				echo form_dropdown('eleman_turu_id', $eleman_turu);
 			?>	
 		</p> 
-
-		<!-- Resim yükleme gelecek -->
 		<p>
 			<?php
 				echo form_label('Kılıf Tipi: ', 'kilif_id');
 				echo form_dropdown('kilif_id', $kilif_tipi);
 			?>	
-		</p> 
+		</p>
+		 <!-- Eleman ekleneceği proje gelecek  -->
 		<p>
 			<?php
 				echo form_label('Elaman Özellikleri: ', 'ozellik');
@@ -48,7 +47,6 @@
 				echo form_textarea($eleman_ozellik_ozellikleri);
 			?>	
 		</p>
-		<!-- Eleman döküman yükleme gelecek -->
 		<p>
 			<?php 
 				echo form_label('Eleman Adeti: ', 'adet');
@@ -61,7 +59,6 @@
 		<p>
 			<?php
 				echo form_label('Numune: ', 'numune');
-				$numune_ozellikleri = array('0'=>'Hayır', '1'=>'Evet');
 				echo form_dropdown('numune', $numune_ozellikleri);
 			?>	
 		</p>

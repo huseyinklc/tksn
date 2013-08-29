@@ -21,7 +21,7 @@
 				echo '<td>' .$tum_bilgiler->eleman_kodu . '</td>';
 				echo '<td>' . $tum_bilgiler->eleman_turu . '</td>';
 				echo '<td>' .$tum_bilgiler->kilif_tipi . '</td>';
-				echo '<td>' . $tum_bilgiler->adet . '</td>';
+				echo '<td>' . $tum_bilgiler->arge_adet . '</td>';
 				echo '<td>' .$tum_bilgiler->numune_mi . '</td>';
 				echo '<td>' . '<a href="eleman/eleman_detay/' .$tum_bilgiler->eleman_id  .'" >Detay </a>' .'</td>';
 				echo '<td>' . '<a href="eleman/eleman_bilgisini_degistir/' .$tum_bilgiler->eleman_id  .'" >Değiştir </a>' .'</td>';
