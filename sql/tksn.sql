@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 29, 2013 at 11:30 ÖÖ
+-- Generation Time: Aug 29, 2013 at 03:16 ÖS
 -- Server version: 5.5.31
 -- PHP Version: 5.4.16
 
@@ -63,19 +63,18 @@ CREATE TABLE IF NOT EXISTS `eleman` (
 --
 
 INSERT INTO `eleman` (`eleman_id`, `eleman_kodu`, `firma_id`, `eleman_turu_id`, `resim`, `kilif_id`, `ozellik`, `dokuman`, `arge_adet`, `depo_adet`, `numune`, `eleman_saklama_durumu_id`) VALUES
-(19, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 0),
-(20, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 0),
-(21, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 0),
-(22, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 0),
-(23, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 0),
-(24, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 0),
-(25, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 0),
-(26, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 0),
-(27, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 0),
-(28, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 0),
-(29, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 0),
-(30, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 0),
-(32, 13, 4, 6, '', 3, 'Çok fazla özellik anlatsam inanmazsın..', '', 500, 0, 0, 0);
+(19, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 1),
+(20, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 2),
+(21, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 3),
+(23, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 4),
+(24, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 3),
+(25, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 3),
+(26, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 2),
+(27, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 4),
+(28, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 4),
+(29, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 3),
+(30, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 0, 1, 2),
+(32, 13, 4, 6, '', 3, 'Çok fazla özellik anlatsam inanmazsın..', '', 500, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -85,7 +84,7 @@ INSERT INTO `eleman` (`eleman_id`, `eleman_kodu`, `firma_id`, `eleman_turu_id`, 
 
 CREATE TABLE IF NOT EXISTS `eleman_saklama_durumu` (
   `eleman_saklama_durumu_id` smallint(2) NOT NULL AUTO_INCREMENT,
-  `saklama_durumu` varchar(40) COLLATE utf8_turkish_ci NOT NULL,
+  `eleman_saklama_durumu` varchar(40) COLLATE utf8_turkish_ci NOT NULL,
   PRIMARY KEY (`eleman_saklama_durumu_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=5 ;
 
@@ -93,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `eleman_saklama_durumu` (
 -- Dumping data for table `eleman_saklama_durumu`
 --
 
-INSERT INTO `eleman_saklama_durumu` (`eleman_saklama_durumu_id`, `saklama_durumu`) VALUES
+INSERT INTO `eleman_saklama_durumu` (`eleman_saklama_durumu_id`, `eleman_saklama_durumu`) VALUES
 (1, 'Depo''ya Bekleniyor'),
 (2, 'Arge''ye Bekleniyor'),
 (3, 'Depoda'),
