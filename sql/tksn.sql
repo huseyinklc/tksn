@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 27, 2013 at 03:53 ÖS
+-- Generation Time: Aug 29, 2013 at 10:47 ÖÖ
 -- Server version: 5.5.31
 -- PHP Version: 5.4.16
 
@@ -21,6 +21,19 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `tksn` DEFAULT CHARACTER SET utf8 COLLATE utf8_turkish_ci;
 USE `tksn`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `adet`
+--
+
+CREATE TABLE IF NOT EXISTS `adet` (
+  `adet_id` smallint(5) NOT NULL AUTO_INCREMENT,
+  `depo_adet` int(8) NOT NULL,
+  `arge_adet` int(8) NOT NULL,
+  PRIMARY KEY (`adet_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -51,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `eleman` (
   `kilif_id` tinyint(2) NOT NULL,
   `ozellik` varchar(10000) COLLATE utf8_turkish_ci NOT NULL,
   `dokuman` varchar(30) COLLATE utf8_turkish_ci NOT NULL,
-  `adet` int(10) NOT NULL,
+  `adet_id` int(10) NOT NULL,
   `numune` tinyint(1) NOT NULL,
   PRIMARY KEY (`eleman_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci AUTO_INCREMENT=33 ;
@@ -60,8 +73,7 @@ CREATE TABLE IF NOT EXISTS `eleman` (
 -- Dumping data for table `eleman`
 --
 
-INSERT INTO `eleman` (`eleman_id`, `eleman_kodu`, `firma_id`, `eleman_turu_id`, `resim`, `kilif_id`, `ozellik`, `dokuman`, `adet`, `numune`) VALUES
-(18, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
+INSERT INTO `eleman` (`eleman_id`, `eleman_kodu`, `firma_id`, `eleman_turu_id`, `resim`, `kilif_id`, `ozellik`, `dokuman`, `adet_id`, `numune`) VALUES
 (19, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
 (20, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
 (21, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
@@ -74,8 +86,7 @@ INSERT INTO `eleman` (`eleman_id`, `eleman_kodu`, `firma_id`, `eleman_turu_id`, 
 (28, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
 (29, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
 (30, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
-(31, 300, 3, 3, '', 1, 'daslmasşlmdşalsmdşlasmdşlasmdşlasmdşlasmşldmsşalmdsaşl', '', 226, 1),
-(32, 13, 4, 6, '', 3, 'Çok fazla özellik anlatsam inanmazsın..', '', 100, 0);
+(32, 13, 4, 6, '', 3, 'Çok fazla özellik anlatsam inanmazsın..', '', 500, 0);
 
 -- --------------------------------------------------------
 
