@@ -65,7 +65,7 @@
 			} else {
 				// proje_id numarasına göre proje bilgileri çekiliyor..
 				$proje_bilgileri['proje_bilgileri'] = $this->proje_model->proje_detay($proje_id); 
-				$this->load->view('arge/proje_goster', $proje_bilgileri);
+				$this->load->view('arge/proje/proje_detay', $proje_bilgileri);
 			}
 		}
 
