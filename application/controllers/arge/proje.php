@@ -30,7 +30,7 @@
 			if( $this->session->userdata('uyelik_turu') != 2) {
 			 	redirect('giris', 'refresh');
 			 }
-			$this->proje_bilgileri = $this->proje_model->proje_bilgilerini_databaseden_cek();
+			$this->proje_liste_bilgileri = $this->proje_model->proje_liste_bilgileri();
 		}
 
 		/**
@@ -47,11 +47,8 @@
 		 * */
 		public function index()
 		{		
-				$veri['proje_bilgileri'] = $this->proje_bilgileri;
-				$veri['hata_mesaji'] = '';
-
-				$this->proje_model->maksimum_id();
-				$this->load->view('arge/arge_index', $veri);	
+				$veri['proje_bilgileri'] = $this->proje_liste_bilgileri;
+				$this->load->view('arge/proje/proje_goster', $veri);	
 		}
 
 		/**
@@ -67,7 +64,7 @@
 				$this->load->view('arge/proje/proje_bulunamadi', $veri);
 			} else {
 				// proje_id numarasına göre proje bilgileri çekiliyor..
-				$proje_bilgileri['proje_bilgileri'] = $this->proje_model->proje_goster($proje_id); 
+				$proje_bilgileri['proje_bilgileri'] = $this->proje_model->proje_detay($proje_id); 
 				$this->load->view('arge/proje_goster', $proje_bilgileri);
 			}
 		}
@@ -123,6 +120,45 @@
 					// Buraya internal server error sayfası gelecek!!!
 					echo 'internal server error';
 				}
+			}
+		}
+
+		/**
+		 * Proje sil sayfasında silinecek sayfanın proje_bilgileri gösteriliyor..
+		 * @arg
+		 */
+		public function proje_sil($proje_id){
+
+			// proje_id sayısına göre proje_bilgilerini çekiyoruz
+			$veri['proje_bilgileri'] = $this->proje_model->proje_detay($proje_id);
+
+			// database bilgilerimiz ile proje_sil sayfamız yükleniyor
+			$this->load->view('arge/proje/proje_sil',$veri);
+		}
+
+
+		/**
+		 * proje_id ile verilen proje database'den siliniyor
+		 * @param  int $proje_id silinecek projenin id numarası
+		 * @return boolean	eğer işlem başarılı bir şekilde halledilmiş ise true döndürüyoruz..
+		 */
+		public function proje_sil_onay($proje_id)
+		{
+				// Proje silme işlemi database'de deneniyor
+				if($this->proje_model->proje_sil($proje_id)) {
+				//Başarılı ise;
+				
+				// Türkçe karakterleri gösterebilmek için utf-8 charseti ayarladık
+				echo '<meta charset="utf-8">';
+
+				// Proje silme işleminin başarılı olduğuna dair mesajımız
+				echo '<h2>Proje silme işlemi başarılı</h2>';
+
+				// 5 saniye üstteki mesajı tuttuktan sonra tekrar proje_listesinin olduğu sayfaya dönüyoruz.
+				$this->output->set_header('refresh:5;url=../../proje'); 
+			} else {
+				// eğer işlem başarısız olmuşsa hata mesajı gösteriyoruz
+				echo 'interval server error';
 			}
 		}
 

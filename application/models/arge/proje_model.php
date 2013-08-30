@@ -35,6 +35,26 @@
 			return $proje_resmi_upload_ozellikleri;
 		}
 
+		/**
+		 * proje_goster sayfası için liste biçiminde gösterebilmek için proje_id ve proje_ismi çekildi
+		 * 
+		 */
+		public function proje_liste_bilgileri()
+		{
+			// proje_id ve proje_ismi seçildi
+			$this->db->select('proje_id, proje_ismi');
+
+			// proje tablosundan seçildi
+			$query = $this->db->get('proje');
+
+			// sonuçlar geri döndürüldü
+			return $query->result();
+		}
+
+		/**
+		 * Proje tablosundaki tüm bilgileri databaseden çekiyoruz..
+		 * @return array proje bilgilerini array içine atıyoruz..
+		 */
 		public function proje_bilgilerini_databaseden_cek()
 		{
 			$query =  $this->db->get('proje');
@@ -42,7 +62,8 @@
 			return $query->result();
 		}
 
-		public function proje_goster($proje_id)
+
+		public function proje_detay($proje_id)
 		{
 			$this->db->where('proje_id', $proje_id);
 			$query = $this->db->get('proje');
@@ -56,5 +77,15 @@
 			$query = $this->db->get('proje');
 
 			return $query->result();
+		}
+
+		/**
+		 * fonksiyona verilen proje_id değerindeki proje databaseden silinecek!!
+		 * @param  int $proje_id silinecek proje_id numarası
+		 * @return bool eğer başarılı ise true değeri...
+		 */
+		public function proje_sil($proje_id)
+		{
+			return	$this->db->delete('proje', array('proje_id' => $proje_id));
 		}
 	}

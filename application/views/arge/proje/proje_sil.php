@@ -8,8 +8,8 @@
 		<h3>Aşağıdaki bilgilere sahip proje silinecek, silmek istediğinize emin misiniz ?</h3>
 	    	<?php
 				foreach ($proje_bilgileri as $proje) {
-					echo '<strong>Proje Ismi: </strong>' . $proje->firma_ismi . '<br />';
-					echo '<strong>Proje Özellikleri </strong>' . $bilgi->eleman_kodu . '<br />';
+					echo '<strong>Proje Ismi: </strong>' . $proje->proje_ismi . '<br />';
+					echo '<strong>Proje Özellikleri </strong>' . $proje->proje_tanimi . '<br />';
 					echo '<a href="../proje_sil_onay/' . $proje->proje_id . '">Sil</a>';
 				}
 			?>		
