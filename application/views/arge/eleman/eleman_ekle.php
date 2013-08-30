@@ -12,6 +12,14 @@
 		<?php echo form_open_multipart('arge/eleman/eleman_ekle_kontrol') ?>
 		<p>
 			<?php
+				echo form_label('Eklenecek Proje: ', 'eklenecek_proje'); 
+				echo form_dropdown('eklenecek_proje', $proje_bilgisi);
+			?>	
+		</p> 
+
+
+		<p>
+			<?php
 				echo form_label('Eleman Kodu: ', 'elaman_kodu');
 				$eleman_kodu = set_value('eleman_kodu'); 
 				$eleman_kodu_ozellikleri = array('name'=>'eleman_kodu', 'id'=>'eleman_kodu', 'maxlenght'=>'70', 'value'=>$eleman_kodu);
