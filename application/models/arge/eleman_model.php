@@ -248,6 +248,27 @@
 			$query = $this->db->get();
 			return $query->result();
 		}
-	}
+
+		/**
+		 * Database içerisinde bulunan projeleri göstermesi için, normalde proje_model 
+		 * içerisinde yapmak daha doğru olsada, proje_model i import etmek istemiyorum..
+		 * 
+		 * @return array proje_bilgileri proje_id ve proje_ismi ni database yardımı ile çekiyoruz...
+		 */
+		public function proje_goster()
+		{
+			// databaseden sadece proje_id ve proje_ismi seçildi
+			$this->db->select('proje_id, proje_ismi');
+
+			// proje tablosundanda veriler alındı
+			$query = $this->db->get('proje');
+
+			// Sonuç kullanılmak üzere return edildi
+			return $query->result();
+		}
+
+
+
+	} // Class sonu
 /* End of the file: eleman_model.php */
 /* Location: ./application/models/arge/ */

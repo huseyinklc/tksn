@@ -45,6 +45,9 @@
 
 			// Databaseden kilif tipleri çekildi..
 			$this->veri['kilif_tipi'] = $this->kilif_tipi;
+
+			// Proje bilgisi databaseden çekildi
+			$this->veri['proje_bilgisi'] = $this->eleman_model->proje_goster();
 		}
 		/**
 		 * eleman sayfası ilk olarak databasedeki eleman bilgilerini tabloda gösterecek şekilde yükleniyor
