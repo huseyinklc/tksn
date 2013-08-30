@@ -4,12 +4,17 @@
  @later: ☐ Session yardımı ile proje'ye eleman ekle sayfası yapılacak
  ✔ Session yardımı ile argenin göreceği sayfaları belirle ! @done (13-08-30 15:09)
  ✔ Proje ve proje ekle sayfaları birleştirilecek! @done (13-08-30 15:18)
- ☐ Proje Sil Sayfası yapılcak 
+ ✔ Proje Sil Sayfası yapılcak @done (13-08-30 17:08)
    @later: Proje silme işi daha detaylanacak, projeye ait dökümanlar ve şemalarda silinecek!!!
- ☐ Proje Sil sayfasına Göre sayfaları tekrar ayarla
+ ✔ Proje Sil sayfasına Göre sayfaları tekrar ayarla @done (13-08-30 17:08)
+ @later:
  ☐ Proje Resmi Olayını kaldır
- ☐ Proje resim ekle ve döküman ekle sayfasını bitir
- ☐ Codeigniter ve link konusunu iyice araştır
+ ☐ Proje şema ekle ve döküman ekle sayfasını bitir
+ ✔ Codeigniter ve link konusunu iyice araştır @done (13-08-30 17:09)
+   @later:
+   base_url'ye göre linkler tekrar değiştirilecek!!!
+   @later:
+   proje_degistir sayfası yapılacak.
  ☐ Eleman bilgisini değiştir, sayfasını düzenle
  ☐ DEPO SAYFALARI
  ☐ BOOTSTRAP İLE CSS KISIMLARI
