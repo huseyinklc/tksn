@@ -11,6 +11,11 @@
 			// Framework parent constuructor çağırıldı..
 			parent::__construct();
 
+			// Arge dışından kullanıcılar erişemesin diye..
+			if( $this->session->userdata('uyelik_turu') != 2) {
+			 	redirect('giris', 'refresh');
+			 }
+
 			// Form işlemleri için form helperi yüklendi
 			$this->load->helper('form');
 

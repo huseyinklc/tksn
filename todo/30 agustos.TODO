@@ -1,7 +1,9 @@
  ✔ Eleman eklede projeler dropdown şekilde echo edilecek @done (13-08-30 15:00)
-        ELEMANA PROJE EKLEME DAHA SONRAYA BIRAKILDI
- ☐ Session yardımı ile proje'ye eleman ekle sayfası yapılacak
- ☐ Session yardımı ile argenin göreceği sayfaları belirle !
+      @later:  ELEMANA PROJE EKLEME DAHA SONRAYA BIRAKILDI
+
+ @later: ☐ Session yardımı ile proje'ye eleman ekle sayfası yapılacak
+ ✔ Session yardımı ile argenin göreceği sayfaları belirle ! @done (13-08-30 15:09)
+ ☐ Proje ve proje ekle sayfaları birleştirilecek!
  ☐ Proje Sil Sayfası yapılcak 
  ☐ Proje Sil sayfasına Göre sayfaları tekrar ayarla
  ☐ Proje Resmi Olayını kaldır
