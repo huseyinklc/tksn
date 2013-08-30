@@ -257,18 +257,25 @@
 		 */
 		public function proje_goster()
 		{
+			// foreach dongusunde kullanmak için boş array tanımladık
+			$donen_proje_bilgileri = array();
+
 			// databaseden sadece proje_id ve proje_ismi seçildi
 			$this->db->select('proje_id, proje_ismi');
 
 			// proje tablosundanda veriler alındı
 			$query = $this->db->get('proje');
 
-			// Sonuç kullanılmak üzere return edildi
-			return $query->result();
+			// Sorgumuzdaki değerleri array içine attık
+			$proje_isimleri = $query->result_array();
+
+			// Dropdown liste için arraye atıldı
+			foreach ($proje_isimleri as $proje) {
+				$donen_proje_bilgileri[$proje['proje_id']] = $proje['proje_ismi'];
+			}
+
+			return $donen_proje_bilgileri;
 		}
-
-
-
 	} // Class sonu
 /* End of the file: eleman_model.php */
 /* Location: ./application/models/arge/ */
