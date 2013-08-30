@@ -12,7 +12,7 @@
 ?>
 
 
-<?php echo form_open_multipart('arge/proje_ekle/form_upload');?>
+<?php echo form_open_multipart('arge/proje/proje_ekle/form_upload');?>
 <p>
 <label>Proje ismi: </label>
 <?php 
